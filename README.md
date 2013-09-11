@@ -1,8 +1,7 @@
 enketo-dristhi
 ==============
 
-Customized enketo-core to be used in hybrid Android app called Dristhi
-
+Extended https://github.com/MartijnR/enketo-core to be used in hybrid Android app called Dristhi.
 
 Use `grunt` to build.
 
