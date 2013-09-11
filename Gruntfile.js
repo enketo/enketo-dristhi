@@ -12,21 +12,21 @@ module.exports = function(grunt) {
       },
       dristhi: {
         files: {
-          'js/webform-drishti-all-min.js': [
-            'src/enketo-core/src/js/helpers.js', 
+          'build/js/webform-drishti-all-min.js': [
+            'lib/enketo-core/src/js/helpers.js', 
             'src/js/gui.js', 
             'src/js/storage-dristhi.js',
-            'src/enketo-core/src/js/form.js', 
-            'src/enketo-core/src/js/widgets.js',
+            'lib/enketo-core/src/js/form.js', 
+            'lib/enketo-core/src/js/widgets.js',
             'src/js/webform-dristhi.js'
           ],
-          'js/libraries-all-min.js': [
-            'src/lib/jquery.min.js', 
-            'src/lib/bootstrap.js', 
-            'src/lib/modernizr.min.js',
-            'src/enketo-core/lib/bootstrap-timepicker/js/bootstrap-timepicker.js',
-            'src/enketo-core/lib/bootstrap-datepicker/js/bootstrap-datepicker.js', 
-            'src/enketo-core/lib/xpath/build/xpathjs_javarosa.min.js'
+          'build/js/libraries-all-min.js': [
+            'lib/jquery.min.js', 
+            'lib/bootstrap.js', 
+            'lib/modernizr.min.js',
+            'lib/enketo-core/lib/bootstrap-timepicker/js/bootstrap-timepicker.js',
+            'lib/enketo-core/lib/bootstrap-datepicker/js/bootstrap-datepicker.js', 
+            'lib/enketo-core/lib/xpath/build/xpathjs_javarosa.min.js'
           ]
         }
       }
