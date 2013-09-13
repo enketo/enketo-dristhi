@@ -1,7 +1,7 @@
 enketo-dristhi
 ==============
 
-[![Build Status](https://travis-ci.org/martijnr/enketo-drishti.png)](https://travis-ci.org/martijnr/enketo-drishti)
+[![Build Status](https://travis-ci.org/martijnr/enketo-dristhi.png)](https://travis-ci.org/martijnr/enketo-dristhi)
 
 Extended [enketo-core](https://github.com/MartijnR/enketo-core) for use in [Dristhi](https://play.google.com/store/apps/details?id=org.ei.drishti), a hybrid Android app.
 
