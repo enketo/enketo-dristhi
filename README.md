@@ -1,8 +1,10 @@
 enketo-dristhi
 ==============
 
-Extended https://github.com/MartijnR/enketo-core to be used in hybrid Android app called Dristhi.
+https://travis-ci.org/martijnr/enketo-drishti.png
+
+Extended [enketo-core](https://github.com/MartijnR/enketo-core) for use in [Dristhi](https://play.google.com/store/apps/details?id=org.ei.drishti), a hybrid Android app.
 
 Use `grunt` to build.
 
-Run statically for testing like this e.g.: `template.html?formName=EC_Registration_EngKan_Final&instanceId=a&debug=true`
+Run locally for testing like this e.g.: `template.html?formName=EC_Registration_EngKan_Final&instanceId=a&debug=true`
