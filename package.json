@@ -3,9 +3,17 @@
   "description": "Customized enketo-core for hybrid Android app 'Dristhi'",
   "homepage": "https://play.google.com/store/apps/details?id=org.ei.drishti",
   "version": "1.0.0",
-  "contributors": ["Martijn van de Rijdt"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martijnr/enketo-dristhi"
+    },
+  "contributors": [
+    "Martijn van de Rijdt"
+  ],
+  "scripts" : { "test" : "grunt test" },
   "devDependencies": {
     "grunt-contrib-uglify": "~0.2.2",
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "grunt-contrib-jasmine": "~0.5.2"
   }
 }

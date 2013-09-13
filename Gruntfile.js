@@ -30,12 +30,32 @@ module.exports = function(grunt) {
           ]
         }
       }
+    },
+    jasmine: {
+      test: {
+        src: 'src/**/*.js',
+        options: {
+          specs: 'tests/spec/*.js',
+          helpers: ['tests/utils/*.js', 'tests/mocks/*.js', 'build/mocks/*.js'],
+          vendor: [
+            'lib/jquery.min.js', 
+            'lib/bootstrap.min.js',
+            'lib/modernizr.min.js',
+            'lib/enketo-core/src/js/utils.js',
+            'lib/enketo-core/lib/xpath/build/xpathjs_javarosa.min.js',
+            'lib/enketo-core/lib/bootstrap-datepicker/js/bootstrap-datepicker.js',
+            'lib/enketo-core/lib/bootstrap-timepicker/js/bootstrap-timepicker.js'
+          ]
+        },
+      }
     }
   });
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
 
   // Default task(s).
+  grunt.registerTask('test', ['jasmine']);
   grunt.registerTask('default', ['uglify']);
 };

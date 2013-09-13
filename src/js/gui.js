@@ -18,17 +18,16 @@
 
 var /** @type {GUI}*/ gui;
 
-$(document).ready(function(){
+$(document).ready(function() {
 	"use strict";
 	helper.setSettings();
 	gui = new GUI();
 	
 	//override Modernizr's detection (for development purposes)
-	if (settings.touch){
+	if (window.location.search.indexOf('touch=true') > 0) {
 		Modernizr.touch = true;
 		$('html').addClass('touch');
-	}
-	else if (settings.touch === false){
+	} else if (window.location.search.indexOf('touch=false') > 0) {
 		Modernizr.touch = false;
 		$('html').removeClass('touch');
 	}
@@ -38,7 +37,7 @@ $(document).ready(function(){
  * Class GUI deals with the main GUI elements (but not the survey form)
  * @constructor
  */
-function GUI(){
+function GUI() {
 	"use strict";
 }
 
