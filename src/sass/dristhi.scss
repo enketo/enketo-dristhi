@@ -1,0 +1,159 @@
+$groupline: #bbbbbb;
+$line: 3px solid $groupline;
+$input-height: 34px;
+$input-min-width: 0.2 * 720px;
+$input-max-width: 80%;
+$baseFontSize: 22px;
+$baseLineHeight: 22px;
+$accent-color-1: #CE4F07;
+$images-path: '../../build/images/';
+$iconSpritePath: '../images/glyphicons-halflings.png'; //patches bug in bootstrap-sass
+$iconWhiteSpritePath: '../images/glyphicons-halflings-white.png'; //patches bug in bootstrap-sas
+
+$mainColor: #0d0d0d;
+
+@mixin font-normal {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal; }
+
+@mixin font-bold {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+  font-weight: bold;
+  font-style: normal; }
+
+// Bootstrap v2.1.1
+//
+// Copyright 2012 Twitter, Inc
+// Licensed under the Apache License v2.0
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Designed and built with all the love in the world @twitter by @mdo and @fat.
+// Converted to Sass by @thomasmcdonald_, and distributed as bootstrap-sass
+
+// Core variables and mixins
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/mixins";
+
+// CSS Reset
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/reset";
+
+// Grid system and page structure
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/scaffolding";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/grid";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/layouts";
+
+// Base CSS
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/type";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/code";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/forms";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/tables";
+
+// Components: common
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/sprites";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/dropdowns";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/wells";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/component-animations";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/close";
+
+// Components: Buttons & Alerts
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/buttons";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/button-groups";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/alerts"; // Note: alerts share common CSS with buttons and thus have styles in _buttons.scss
+
+// Components: Nav
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/navs";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/navbar";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/breadcrumbs";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/pagination";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/pager";
+
+// Components: Popovers
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/modals";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/tooltip";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/popovers";
+
+// Components: Misc
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/thumbnails";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/labels-badges";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/progress-bars";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/accordion";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/carousel";
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/hero-unit";
+
+// Utility classes
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/utilities"; // Has to be last to override when necessary
+
+// REPEAT VARIABLES & MIXINS
+// -------------------------
+// Required since we compile the responsive stuff separately
+
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/mixins";
+
+// RESPONSIVE CLASSES
+// ------------------
+
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/responsive-utilities";
+
+// MEDIA QUERIES
+// ------------------
+
+// Large desktops
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/responsive-1200px-min";
+
+// Tablets to regular desktops
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/responsive-768px-979px";
+
+// Phones to portrait tablets and narrow desktops
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/responsive-767px-max";
+
+
+// RESPONSIVE NAVBAR
+// ------------------
+
+// From 979px and below, show a button to toggle navbar contents
+@import "../../lib/enketo-core/lib/bootstrap-sass/bootstrap/responsive-navbar";
+
+
+@import "../../lib/enketo-core/src/sass/core/_mixins";
+@import "../../lib/enketo-core/src/sass/core/_layout";
+@import "../../lib/enketo-core/src/sass/core/_main";
+@import "../../lib/enketo-core/src/sass/core/_responsive";
+@import "../../lib/enketo-core/src/sass/core/_timepicker";
+@import "../../lib/enketo-core/src/sass/core/_datepicker";
+@import '../../lib/enketo-core/src/sass/core/_geopoint_widget';
+@import '../../lib/enketo-core/src/sass/core/_select_widget';
+@import '../../lib/enketo-core/src/sass/core/_select_mobile_widget';
+@import '../../lib/enketo-core/src/sass/core/_table_widget';
+@import '../../lib/enketo-core/src/sass/core/_grid_widget';
+@import '../../lib/enketo-core/src/sass/core/_file_widget';
+@import '../../lib/enketo-core/src/sass/formhub/_theme';
+
+/* overriding main rules */
+body, h2,h3,h4,legend{
+    //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: $mainColor;}
+h3 {
+  font-weight: bolder;
+  font-size: 30px; }
+.btn-info{
+    @include btn-info-extension-flat;}
+
+.paper{
+    border: none; }
+
+/* overriding _form rules */
+.paper {
+    .form-language-selector {
+        border-right: none;}
+    .form-header {
+        display: none;} }
+.btn-radiocheck{
+    &:hover, &:focus, &:active, &[data-checked]{
+        background-color: #e4f4ff; } }
+.input-append .add-on{
+    padding: 13px 5px 7px 5px;
+}
+#submit-form progress{
+    margin: 0 auto -6px auto;}
