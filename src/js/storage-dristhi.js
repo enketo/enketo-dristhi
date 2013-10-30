@@ -254,7 +254,9 @@ function JData(data){
 			if ($current.children(nodeNames[j]).length === 0 ||
 				(r.name && r.index && nodeNames[j] === r.name && $current.children(nodeNames[j]).eq(r.index).length === 0)){
 				//console.log('nodeName does not exist, going to create it as child of ', $current[0]);
-				$node = $($.parseXML('<'+nodeNames[j]+'/>').documentElement);
+				var node = $.parseXML('<'+nodeNames[j]+'/>').documentElement;
+				document.adoptNode(node);
+				$node = $(node);
 				$current.append($node);
 				$current = $node;
 			}
