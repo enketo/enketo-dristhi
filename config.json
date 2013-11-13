@@ -1,7 +1,6 @@
 {
     "widgets": [
         "enketo-widget/note/notewidget",
-        "enketo-widget/select-desktop/selectpicker",
         "enketo-widget/select-mobile/selectpicker",
         "enketo-widget/geopoint/geopointpicker",
         "enketo-widget/table/tablewidget",

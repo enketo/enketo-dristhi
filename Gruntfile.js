@@ -77,6 +77,20 @@ module.exports = function( grunt ) {
                     }
                 },
             }
+        },
+        // this compiles all javascript to a single minified file
+        requirejs: {
+            compile: {
+                options: {
+                    name: '../../main',
+                    baseUrl: 'src/js',
+                    mainConfigFile: "main.js",
+                    findNestedDependencies: true,
+                    include: [ '../../lib/enketo-core/lib/require.js', 'enketo-js/Widget' ].concat( grunt.file.readJSON( 'config.json' ).widgets ),
+                    out: "build/js/enketo-dristhi-combined.min.js",
+                    optimize: "uglify2"
+                }
+            }
         }
     } );
 
@@ -123,6 +137,7 @@ module.exports = function( grunt ) {
     //grunt.registerTask( 'compile', [ 'requirejs:combine', 'closure-compiler:compile' ] );
     grunt.registerTask( 'test', [ 'jsbeautifier:test', 'jshint', 'jasmine' ] );
     grunt.registerTask( 'style', [ 'prepWidgetSass', 'sass' ] );
+    grunt.registerTask( 'compile', [ 'requirejs:compile' ] );
     grunt.registerTask( 'server', [ 'connect:server:keepalive' ] );
-    grunt.registerTask( 'default', [ 'jshint', 'sass', 'test' ] );
+    grunt.registerTask( 'default', [ 'jshint', 'sass', 'compile', 'test' ] );
 };
