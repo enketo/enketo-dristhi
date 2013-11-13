@@ -6,4 +6,6 @@ External Drishti/Android depencies are mocked so it can be run in the browser.
 
 Use `grunt` to build.
 
-Run locally for testing, without requiring a webserver, like this e.g.: `template.html?formName=EC_Registration_EngKan_Final&instanceId=a&debug=true`
+start webserver with `grunt server`.
+
+Access like this e.g.: `http://localhost:8080/build/template.html?formName=EC_Registration_24_5_12&instanceId=a&debug=true`

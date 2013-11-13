@@ -10,16 +10,14 @@
 
 		<link type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" media="all" rel="stylesheet" />
 		<link href="css/dristhi.css" media="all" rel="stylesheet" type="text/css">
-		<script type="text/javascript" src="js/libraries-all-min.js"></script>
-		<script type="text/javascript" src="js/webform-drishti-all-min.js"></script>
-<!--		
-		<script type="text/javascript" src="../lib/enketo-core/src/js/helpers.js"></script>
-		<script type="text/javascript" src="../src/js/gui.js"></script>
-		<script type="text/javascript" src="../src/js/storage-dristhi.js"></script>
-		<script type="text/javascript" src="../lib/enketo-core/src/js/form.js"></script>
-		<script type="text/javascript" src="../lib/enketo-core/src/js/widgets.js"></script>
-		<script type="text/javascript" src="../src/js/webform-dristhi.js"></script>
--->
+
+		<script type="text/javascript" src="../../lib/enketo-core/lib/modernizr.js"></script>
+
+<!--    unminified: -->
+		<script type="text/javascript" data-main="../../main.js" src="../../lib/enketo-core/lib/require.js"></script>
+
+<!-- 	minified: -->
+		<!--<script type="text/javascript" src="js/enketo-combined.min.js"></script>-->
 
 <!--	*** mocks to run statically in browser *** -->
 
@@ -28,18 +26,13 @@
 		<script type="text/javascript" src="mocks/androidcontext.mock.js"></script>
 
 <!--	*** end of mocks *** -->
+
 		<!--<script type="text/javascript" src="../ziggy/ziggy.min.js"></script>-->
 		<script type="text/javascript">
 			window.onerror = function (m, u, l) {
         	    console.error("Javascript Error: , msg: {0}, url: {1}, line: {2}".format(m, u, l));
 				return true;
 			};
-
-			var settings = {};
-			settings['mapsDynamicAPIKey'] = 'AIzaSyDF5xYZfxN7r5SsNPGstjAeTzwa6dVU4Ik';
-			settings['mapsStaticAPIKey'] = 'AIzaSyDF5xYZfxN7r5SsNPGstjAeTzwa6dVU4Ik';
-			settings['supportEmail'] = '';
-			settings['returnURL'] = '';
 
 			var modelStr = androidContext.getModel();
 		</script>
@@ -52,7 +45,7 @@
 				<h3></h3>
 			</div>
 			<div class="modal-body">
-				<p class="alert alert-block alert-error"></p>
+				<p class="alert alert-block alert-danger"></p>
 			</div>
 			<div class="modal-footer">
 				<span class="self-destruct-timer"></span>

@@ -1,43 +1,32 @@
 var androidContext = {
 
-	//formName : 'ANC_Close_EngKan_Final',
-	//formName : 'ANC_Registration_EngKan_Final',
-	//formName : 'EC_Registration_EngKan_Final',
-	//formName : 'thedata.xml',
-	formName: helper.getQueryParam('formName'),
+    //formName: 'ANC_Registration_24_5_12',
+    //formName: 'EC_Registration_24_5_12',
+    formName: getURLParameter( 'formName' ),
 
-	getForm : function(){
-		return mockForms2[this.formName].html_form;
-	},
+    getForm: function() {
+        return mockForms[ this.formName ].html_form;
+    },
 
-	getModel : function(){
-		return mockForms2[this.formName].xml_model;
-	},
+    getModel: function() {
+        return mockForms[ this.formName ].xml_model;
+    },
 
-	goBack : function(){}
+    goBack: function() {}
 };
 
 var logContext = {
-	logError : function(e){
-		console.error(e);
-	}
+    logError: function( e ) {
+        console.log( e );
+    }
 };
 
-var enketo = {
-	FormDataRepository : function(){},
-	FormDataController : function(entityRelO, formDefO, formModelMapperO){
-		this.get = function(params){
-			return mockInstances[params.instanceId] || null;
-		};
-		this.save = function(instanceId, data){
-			console.log('saving...');
-		};
-	},
-	EntityRelationshipLoader : function(){},
-	FormDefinitionLoader : function(){},
-	FormModelMapper : function(dataRepo, sqlBuilder, idFactory){},
-	SQLQueryBuilder : function(dataRepo){},
-	IdFactory : function(bridge){},
-	IdFactoryBridge : function(){},
-	FormSubmissionRouter : function(){}
-};
+String.prototype.format = function( a, b, c ) {
+    return a + b + c;
+}
+
+function getURLParameter( name ) {
+    return decodeURI(
+        ( RegExp( name + '=' + '(.+?)(&|$)' ).exec( location.search ) || [ , null ] )[ 1 ]
+    );
+}
