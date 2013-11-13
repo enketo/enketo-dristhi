@@ -10,7 +10,7 @@ requirejs.config( {
         jquery: '../../lib/enketo-core/lib/jquery',
         bootstrap: '../../lib/enketo-core/lib/bootstrap',
         gmapsDone: '../../lib/enketo-core/lib/gmapsDone', //needs to be removed after https://github.com/MartijnR/enketo-core/issues/22
-        enketo: '../../build/mocks/enketo.mock' //replace with real one in production
+        enketo: '../../build/mock/enketo.mock' //replace with real one in production
     },
     shim: {
         'xpath': {

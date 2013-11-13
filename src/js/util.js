@@ -13,8 +13,8 @@ define( [], function() {
             }
         }
         return params;
-    };
+    }
     return {
         getAllQueryParams: getAllQueryParams
-    }
+    };
 } );

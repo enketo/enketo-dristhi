@@ -60,7 +60,7 @@ define( [ 'jquery', 'bootstrap' ], function( $ ) {
                 $alert.find( '.close' ).click();
             }, duration * 1000 );
         }
-    };
+    }
 
     return {
         alert: alert

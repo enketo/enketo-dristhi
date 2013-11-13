@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Jasmine Spec Runner v2.0.0-rc2</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.3.1/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-1.3.1/jasmine.css">
+  <script type="text/javascript" src="lib/jasmine-1.3.1/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-1.3.1/jasmine-html.js"></script>
+  
+  <script type="text/javascript" src="../../lib/enketo-core/lib/require.js"></script>
+
+  <script type="text/javascript">
+    requirejs.config({
+      baseUrl: '../../src/js/',
+      paths: {
+        jquery: '../../lib/enketo-core/lib/jquery',
+        'test-mock': '../../test/mock',
+        'app-mock' : '../../build/mock',
+        'spec': '../../test/spec',
+        'plugins' : '../../lib/enketo-core/src/js/plugins'
+      }
+    });
+
+    requirejs([
+      'test-mock/form-model.mock', 'app-mock/transforms.mock', 'app-mock/instances.mock',
+      'spec/model-json.spec'
+    ], function() {
+    
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var htmlReporter = new jasmine.HtmlReporter();
+
+      jasmineEnv.addReporter(htmlReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return htmlReporter.specFilter(spec);
+      };
+
+      jasmineEnv.execute();
+    });
+  </script>
+</head>
+
+<body>
+</body>
+</html>

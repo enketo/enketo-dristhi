@@ -13,23 +13,18 @@ module.exports = function( grunt ) {
                 options: {
                     port: 8080
                 }
-            },
-            test: {
-                options: {
-                    port: 8000
-                }
             }
         },
         jsbeautifier: {
             test: {
-                src: [ "*.js", "src/js/*.js", "src/widget/*/*.js" ],
+                src: [ "*.js", "src/js/*.js" ],
                 options: {
                     config: "./.jsbeautifyrc",
                     mode: "VERIFY_ONLY"
                 }
             },
             fix: {
-                src: [ "src/js/*.js", "src/widget/*/*.js" ],
+                src: [ "*.js", "src/js/*.js" ],
                 options: {
                     config: "./.jsbeautifyrc"
                 }
@@ -39,7 +34,7 @@ module.exports = function( grunt ) {
             options: {
                 jshintrc: '.jshintrc'
             },
-            all: [ '*.js', 'src/js/**/*.js', '!src/js/extern.js' ]
+            all: [ '*.js', 'src/js/**/*.js' ]
         },
         watch: {
             sass: {
@@ -50,42 +45,6 @@ module.exports = function( grunt ) {
                 }
             }
         },
-        /*
-            dristhi: {
-                files: {
-                    '
-            build / js / webform - drishti - all - min.js ': [
-                        '
-            lib / enketo - core / src / js / utils.js ',
-                        '
-            src / js / gui.js ',
-                        '
-            src / js / storage - dristhi.js ',
-                        '
-            lib / enketo - core / src / js / form.js ',
-                        '
-            lib / enketo - core / src / js / widgets.js ',
-                        '
-            src / js / webform - dristhi.js '
-                    ],
-                    '
-            build / js / libraries - all - min.js ': [
-                        '
-            lib / enketo - core / lib / jquery.min.js ',
-                        '
-            lib / enketo - core / lib / bootstrap.js ',
-                        '
-            lib / enketo - core / lib / modernizr.min.js ',
-                        '
-            lib / enketo - core / lib / bootstrap - timepicker / js / bootstrap - timepicker.js ',
-                        '
-            lib / enketo - core / lib / bootstrap - datepicker / js / bootstrap - datepicker.js ',
-                        '
-            lib / enketo - core / lib / xpath / build / xpathjs_javarosa.min.js '
-                    ]
-                }
-            }
-        }, */
         prepWidgetSass: {
             writePath: 'src/sass/_widgets.scss',
             widgetConfigPath: 'config.json'
@@ -102,24 +61,24 @@ module.exports = function( grunt ) {
         },
         jasmine: {
             test: {
-                src: 'src /**/ * .js ',
+                src: 'src/js/FormModelJSON.js ',
                 options: {
-                    specs: 'tests/spec/*.js',
-                    helpers: [ 'tests/utils/*.js', 'tests/mocks/*.js', 'build/mocks/*.js' ],
-                    vendor: [
-                        'lib/enketo-core/lib/jquery.min.js',
-                        'lib/enketo-core/lib/bootstrap.js',
-                        'lib/enketo-core/lib/modernizr.min.js',
-                        'lib/enketo-core/src/js/utils.js',
-                        'lib/enketo-core/lib/xpath/build/xpathjs_javarosa.min.js',
-                        'lib/enketo-core/lib/bootstrap-datepicker/js/bootstrap-datepicker.js',
-                        'lib/enketo-core/lib/bootstrap-timepicker/js/bootstrap-timepicker.js'
-                    ]
+                    specs: 'test/spec/*.js',
+                    helpers: [ 'test/mock/*.js', 'build/mock/instances.mock.js', 'build/mock/transforms.mock.js' ],
+                    template: require( 'grunt-template-jasmine-requirejs' ),
+                    templateOptions: {
+                        requireConfig: {
+                            baseUrl: 'src/js',
+                            paths: {
+                                jquery: '../../lib/enketo-core/lib/jquery',
+                                'plugins': '../../lib/enketo-core/src/js/plugins'
+                            }
+                        }
+                    }
                 },
             }
         }
     } );
-
 
     grunt.loadNpmTasks( 'grunt-contrib-connect' );
     grunt.loadNpmTasks( 'grunt-jsbeautifier' );
@@ -161,8 +120,8 @@ module.exports = function( grunt ) {
 
     } );
 
-    //    grunt.registerTask( 'compile', [ 'requirejs:combine', 'closure-compiler:compile' ] );
-    grunt.registerTask( 'test', [ 'jsbeautifier:test', 'connect:test', 'jasmine' ] );
+    //grunt.registerTask( 'compile', [ 'requirejs:combine', 'closure-compiler:compile' ] );
+    grunt.registerTask( 'test', [ 'jsbeautifier:test', 'jshint', 'jasmine' ] );
     grunt.registerTask( 'style', [ 'prepWidgetSass', 'sass' ] );
     grunt.registerTask( 'server', [ 'connect:server:keepalive' ] );
     grunt.registerTask( 'default', [ 'jshint', 'sass', 'test' ] );
