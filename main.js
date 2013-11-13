@@ -4,6 +4,8 @@ requirejs.config( {
         'enketo-js': '../../lib/enketo-core/src/js',
         'enketo-widget': '../../lib/enketo-core/src/widget',
         'enketo-config': '../../config.json',
+        'enketo-json': '../../lib/enketo-json/src',
+        'jquery.getXPath': '../../lib/enketo-json/lib/jquery-xpath/jquery.getXPath',
         text: '../../lib/enketo-core/lib/text/text',
         xpath: '../../lib/enketo-core/lib/xpath/build/xpathjs_javarosa',
         gmaps: 'http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&callback=gmapsLoaded', // add API key
@@ -33,7 +35,7 @@ requirejs.config( {
 
 define( 'modernizr', [], Modernizr );
 
-requirejs( [ 'jquery', 'modernizr', 'enketo-js/Form', 'FormDataController', 'FormModelJSON', 'gui', 'util' ],
+requirejs( [ 'jquery', 'modernizr', 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'gui', 'util' ],
     function( $, modernizr, Form, FormDataController, FormModelJSON, gui, util ) {
         'use strict';
         var existingInstanceJ, instanceToEdit, loadErrors, jDataO, form,
@@ -49,7 +51,6 @@ requirejs( [ 'jquery', 'modernizr', 'enketo-js/Form', 'FormDataController', 'For
 
         jDataO = new FormModelJSON( existingInstanceJ );
         instanceToEdit = jDataO.toXML();
-        console.debug( 'instance to edit: ', instanceToEdit );
         form = new Form( 'form.or:eq(0)', modelStr, instanceToEdit );
 
         loadErrors = form.init();
@@ -78,12 +79,4 @@ requirejs( [ 'jquery', 'modernizr', 'enketo-js/Form', 'FormDataController', 'For
                 }
             }, 100 );
         } );
-
-        //get query string parameter
-
-        function getURLParameter( name ) {
-            return decodeURI(
-                ( new RegExp( name + '=' + '(.+?)(&|$)' ).exec( location.search ) || [ , null ] )[ 1 ]
-            );
-        }
     } );

@@ -59,25 +59,6 @@ module.exports = function( grunt ) {
                 }
             }
         },
-        jasmine: {
-            test: {
-                src: 'src/js/FormModelJSON.js ',
-                options: {
-                    specs: 'test/spec/*.js',
-                    helpers: [ 'test/mock/*.js', 'build/mock/instances.mock.js', 'build/mock/transforms.mock.js' ],
-                    template: require( 'grunt-template-jasmine-requirejs' ),
-                    templateOptions: {
-                        requireConfig: {
-                            baseUrl: 'src/js',
-                            paths: {
-                                jquery: '../../lib/enketo-core/lib/jquery',
-                                'plugins': '../../lib/enketo-core/src/js/plugins'
-                            }
-                        }
-                    }
-                },
-            }
-        },
         // this compiles all javascript to a single minified file
         requirejs: {
             compile: {
@@ -96,7 +77,6 @@ module.exports = function( grunt ) {
 
     grunt.loadNpmTasks( 'grunt-contrib-connect' );
     grunt.loadNpmTasks( 'grunt-jsbeautifier' );
-    grunt.loadNpmTasks( 'grunt-contrib-jasmine' );
     grunt.loadNpmTasks( 'grunt-contrib-watch' );
     grunt.loadNpmTasks( 'grunt-contrib-jshint' );
     grunt.loadNpmTasks( 'grunt-contrib-sass' );
@@ -134,10 +114,8 @@ module.exports = function( grunt ) {
 
     } );
 
-    //grunt.registerTask( 'compile', [ 'requirejs:combine', 'closure-compiler:compile' ] );
-    grunt.registerTask( 'test', [ 'jsbeautifier:test', 'jshint', 'jasmine' ] );
     grunt.registerTask( 'style', [ 'prepWidgetSass', 'sass' ] );
     grunt.registerTask( 'compile', [ 'requirejs:compile' ] );
     grunt.registerTask( 'server', [ 'connect:server:keepalive' ] );
-    grunt.registerTask( 'default', [ 'jshint', 'sass', 'compile', 'test' ] );
+    grunt.registerTask( 'default', [ 'jshint', 'sass', 'compile' ] );
 };
