@@ -6,11 +6,8 @@ $input-max-width: 80%;
 $baseFontSize: 22px;
 $baseLineHeight: 22px;
 $accent-color-1: #CE4F07;
-$images-path: '../../build/images/';
-$iconSpritePath: '../images/glyphicons-halflings.png'; //patches bug in bootstrap-sass
-$iconWhiteSpritePath: '../images/glyphicons-halflings-white.png'; //patches bug in bootstrap-sas
-
-$mainColor: #0d0d0d;
+$images-path: '../images/';
+$icon-font-path: '../font/';
 
 @mixin font-normal {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -84,12 +81,15 @@ $mainColor: #0d0d0d;
 /* overriding main rules */
 body, h2,h3,h4,legend{
     //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: $mainColor;}
+    color: #0d0d0d;}
 h3 {
   font-weight: bolder;
   font-size: 30px; }
 .btn-info{
-    @include btn-info-extension-flat;}
+    //slightly tweak bootstrap default
+    @include button-variant($btn-info-color, #5bc0de, $btn-info-border);
+    //@include btn-info-extension-flat;
+}
 
 .paper{
     border: none; }

@@ -38,7 +38,7 @@ module.exports = function( grunt ) {
         },
         watch: {
             sass: {
-                files: [ 'src/**/*.scss' ],
+                files: [ 'src/**/*.scss', 'lib/enketo-core/src/**/*.scss' ],
                 tasks: [ 'style' ],
                 options: {
                     spawn: false

@@ -691,7 +691,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 
 .collapsing { position: relative; height: 0; overflow: hidden; -webkit-transition: height 0.35s ease; transition: height 0.35s ease; }
 
-@font-face { font-family: 'Glyphicons Halflings'; src: url("bootstrap/glyphicons-halflings-regular.eot"); src: url("bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+@font-face { font-family: 'Glyphicons Halflings'; src: url("../font/glyphicons-halflings-regular.eot"); src: url("../font/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../font/glyphicons-halflings-regular.woff") format("woff"), url("../font/glyphicons-halflings-regular.ttf") format("truetype"), url("../font/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 .glyphicon { position: relative; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 .glyphicon:empty { width: 1em; }
@@ -2003,15 +2003,9 @@ fieldset .remove { float: right; margin-right: 0; }
 .btn-reset[readonly] { background: none; }
 .btn-reset i { color: #000; vertical-align: bottom; }
 
-.bootstrap-select { margin-top: 15px; }
-.bootstrap-select .dropdown-toggle { min-width: 130px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-align: left; }
-.bootstrap-select .dropdown-toggle .caret { margin-left: 10px; margin-top: 7px; }
-.bootstrap-select .dropdown-toggle ~ .dropdown-menu label { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; padding-top: 0px; padding-left: 0px; font-size: 1em; }
-.bootstrap-select .dropdown-toggle ~ .dropdown-menu label input[type="checkbox"] { margin: 0 10px 1px 0; }
-
 .mobileselect { margin-left: 10px; }
 
-.icon-crosshairs { background-image: url("../../build/images/crosshairs.png"); background-position: -5px -5px; }
+.icon-crosshairs { background-image: url("../images/crosshairs.png"); background-position: -5px -5px; }
 
 .geopoint { margin-top: 25px; }
 .geopoint .geo-inputs { min-width: 160px; width: 27%; margin: 0 4% 0 0; }
@@ -2273,7 +2267,7 @@ fieldset .remove { float: right; margin-right: 0; }
 /* fancy radio buttons / checkboxes */
 legend ~ label .active { margin-left: 0; }
 
-input[type=radio], input[type=checkbox] { background: url("../../build/images/checkradio.png") no-repeat; cursor: pointer; -webkit-appearance: none; -moz-background-position-x: -9999px -9999px !important; -moz-background-position-y: -9999px -9999px !important; -ms-background-position-x: -9999px !important; -ms-background-position-y: -9999px !important; float: left; border: none; width: 22px; height: 22px; margin: 0 10px 1px 10px; }
+input[type=radio], input[type=checkbox] { background: url("../images/checkradio.png") no-repeat; cursor: pointer; -webkit-appearance: none; -moz-background-position-x: -9999px -9999px !important; -moz-background-position-y: -9999px -9999px !important; -ms-background-position-x: -9999px !important; -ms-background-position-y: -9999px !important; float: left; border: none; width: 22px; height: 22px; margin: 0 10px 1px 10px; }
 
 input[type=checkbox] { background-position: 0 0; }
 input[type=checkbox]:checked { background-position: -22px 0; }
@@ -2294,7 +2288,12 @@ body, h2, h3, h4, legend { color: #0d0d0d; }
 
 h3 { font-weight: bolder; font-size: 30px; }
 
-.btn-info { background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4)); background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4); background-image: -o-linear-gradient(top, #5bc0de, #2f96b4); background-image: linear-gradient(to bottom, #3ca5d6, #3696c2); border: 1px solid #3186ad; }
+.btn-info { color: white; background-color: #5bc0de; border-color: #46b8da; }
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active { color: white; background-color: #39b3d7; border-color: #269abc; }
+.open .btn-info.dropdown-toggle { color: white; background-color: #39b3d7; border-color: #269abc; }
+.btn-info:active, .btn-info.active { background-image: none; }
+.open .btn-info.dropdown-toggle { background-image: none; }
+.btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active { background-color: #5bc0de; border-color: #46b8da; }
 
 .paper { border: none; }
 
