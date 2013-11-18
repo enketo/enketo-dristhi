@@ -11,8 +11,9 @@ External Drishti/Android depencies are mocked so it can be run in the browser.
 2. clone repo
 3. Use `grunt` to build.
 4. start webserver with `grunt server`.
-5. Access like this e.g.: `http://localhost:8080/build/template.html?formName=EC_Registration_24_5_12&instanceId=a&debug=true`
-6. probably use dristhi.css as-is, but create your own js build system that includes the enketo and androidcontext objects and their dependencies
+5. Access like this e.g.: [http://localhost:8080/build/template.html?formName=EC_Registration_24_5_12&instanceId=a&debug=true](http://localhost:8080/build/template.html?formName=EC_Registration_24_5_12&instanceId=a&debug=true)
+6. probably use dristhi.css as-is, but
+7. create your own **js build system** that includes the enketo and androidcontext objects and their dependencies (enketo-dristhi-combined.min.js includes require.js itself so you don't want to use that)
 
 
 ### WATCH OUT WHEN UPGRADING TO V2.x!
