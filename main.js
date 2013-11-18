@@ -11,6 +11,7 @@ requirejs.config( {
         gmaps: 'http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&callback=gmapsLoaded', // add API key
         jquery: '../../lib/enketo-core/lib/jquery',
         bootstrap: '../../lib/enketo-core/lib/bootstrap',
+        Modernizr: '../../lib/enketo-core/lib/Modernizr',
         gmapsDone: '../../lib/enketo-core/lib/gmapsDone', //needs to be removed after https://github.com/MartijnR/enketo-core/issues/22
         enketo: '../../build/mock/enketo.mock' //replace with real one in production
     },
@@ -29,29 +30,35 @@ requirejs.config( {
         'widget/time/bootstrap3-timepicker/js/bootstrap-timepicker': {
             deps: [ 'jquery' ],
             exports: 'jQuery.fn.timepicker'
+        },
+        "Modernizr": {
+            exports: "Modernizr"
         }
     }
 } );
 
-define( 'modernizr', [], Modernizr );
-
-requirejs( [ 'jquery', 'modernizr', 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'gui', 'util' ],
-    function( $, modernizr, Form, FormDataController, FormModelJSON, gui, util ) {
+requirejs( [ 'jquery', 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'gui', 'util' ],
+    function( $, Form, FormDataController, FormModelJSON, gui, util ) {
         'use strict';
-        var existingInstanceJ, instanceToEdit, loadErrors, jDataO, form,
+        var existingInstanceJSON, instanceToEditXMLStr, loadErrors, modelJSON, form,
             queryParams = util.getAllQueryParams(),
             formDataController = new FormDataController( queryParams );
 
-        existingInstanceJ = formDataController.get();
+        //switches to touch=true, useful for desktop development, won't affect performance of production app.
+        if ( typeof setToMobileMode === 'function' ) {
+            setToMobileMode();
+        }
 
-        if ( !existingInstanceJ ) {
+        existingInstanceJSON = formDataController.get();
+
+        if ( !existingInstanceJSON ) {
             $( 'form.or' ).remove();
             return gui.alert( 'Instance with id "' + settings.instanceId + '" could not be found.' );
         }
 
-        jDataO = new FormModelJSON( existingInstanceJ );
-        instanceToEdit = jDataO.toXML();
-        form = new Form( 'form.or:eq(0)', modelStr, instanceToEdit );
+        modelJSON = new FormModelJSON( existingInstanceJSON );
+        instanceToEditXMLStr = modelJSON.toXML();
+        form = new Form( 'form.or:eq(0)', modelXMLStr, instanceToEditXMLStr );
 
         loadErrors = form.init();
         console.log( 'load errors', loadErrors );
@@ -71,7 +78,7 @@ requirejs( [ 'jquery', 'modernizr', 'enketo-js/Form', 'FormDataController', 'enk
                         $button.btnBusyState( false );
                         return;
                     } else {
-                        jData = jDataO.get();
+                        jData = modelJSON.get();
                         delete jData.errors;
                         saveResult = formDataController.save( form.getInstanceID(), jData );
                         $button.btnBusyState( false );
@@ -79,4 +86,5 @@ requirejs( [ 'jquery', 'modernizr', 'enketo-js/Form', 'FormDataController', 'enk
                 }
             }, 100 );
         } );
+
     } );

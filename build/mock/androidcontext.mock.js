@@ -32,6 +32,10 @@ function getURLParameter( name ) {
 }
 
 //this happens automatically in main app for mobiles
-Modernizr.touch = true;
-var html = document.getElementsByTagName( 'html' )[ 0 ];
-html.className = html.className.replace( /no-touch/, 'touch' );
+function setToMobileMode() {
+    require( [ 'Modernizr' ], function() {
+        Modernizr.touch = true;
+        var html = document.getElementsByTagName( 'html' )[ 0 ];
+        html.className = html.className.replace( /no-touch/, 'touch' );
+    } );
+};
