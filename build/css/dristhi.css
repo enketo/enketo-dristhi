@@ -49,7 +49,7 @@ svg:not(:root) { overflow: hidden; }
 
 figure { margin: 0; }
 
-fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+fieldset { border: 1px solid silver; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
 
 legend { border: 0; padding: 0; }
 
@@ -75,25 +75,25 @@ textarea { overflow: auto; vertical-align: top; }
 
 table { border-collapse: collapse; border-spacing: 0; }
 
-@media print { * { text-shadow: none !important; color: #000 !important; background: transparent !important; box-shadow: none !important; }
+@media print { * { text-shadow: none !important; color: black !important; background: transparent !important; box-shadow: none !important; }
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
   a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  pre, blockquote { border: 1px solid #999999; page-break-inside: avoid; }
   thead { display: table-header-group; }
   tr, img { page-break-inside: avoid; }
   img { max-width: 100% !important; }
-  @page { margin: 2cm .5cm; }
+  @page { margin: 2cm 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
-  select { background: #fff !important; }
+  select { background: white !important; }
   .navbar { display: none; }
-  .table td, .table th { background-color: #fff !important; }
-  .btn > .caret, .dropup > .btn > .caret { border-top-color: #000 !important; }
-  .label { border: 1px solid #000; }
+  .table td, .table th { background-color: white !important; }
+  .btn > .caret, .dropup > .btn > .caret { border-top-color: black !important; }
+  .label { border: 1px solid black; }
   .table { border-collapse: collapse !important; }
-  .table-bordered th, .table-bordered td { border: 1px solid #ddd !important; } }
+  .table-bordered th, .table-bordered td { border: 1px solid #dddddd !important; } }
 *, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 html { font-size: 62.5%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
@@ -104,7 +104,7 @@ input, button, select, textarea { font-family: inherit; font-size: inherit; line
 
 a { color: #428bca; text-decoration: none; }
 a:hover, a:focus { color: #2a6496; text-decoration: underline; }
-a:focus { outline: thin dotted #333; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
+a:focus { outline: thin dotted #333333; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
 
 img { vertical-align: middle; }
 
@@ -542,7 +542,7 @@ select[multiple], select[size] { height: auto; }
 
 select optgroup { font-size: inherit; font-style: inherit; font-family: inherit; }
 
-input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus { outline: thin dotted #333; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
+input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus { outline: thin dotted #333333; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
 
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { height: auto; }
 
@@ -618,7 +618,7 @@ textarea.input-lg, .input-group-lg > textarea.form-control, .input-group-lg > te
 @media (min-width: 768px) { .form-horizontal .control-label { text-align: right; } }
 
 .btn { display: inline-block; margin-bottom: 0; font-weight: normal; text-align: center; vertical-align: middle; cursor: pointer; background-image: none; border: 1px solid transparent; white-space: nowrap; padding: 6px 12px; font-size: 14px; line-height: 1.42857; border-radius: 4px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
-.btn:focus { outline: thin dotted #333; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
+.btn:focus { outline: thin dotted #333333; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
 .btn:hover, .btn:focus { color: #333333; text-decoration: none; }
 .btn:active, .btn.active { outline: 0; background-image: none; -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
 .btn.disabled, .btn[disabled], fieldset[disabled] .btn { cursor: not-allowed; pointer-events: none; opacity: 0.65; filter: alpha(opacity=65); -webkit-box-shadow: none; box-shadow: none; }
@@ -1425,7 +1425,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 .pager .previous > a, .pager .previous > span { float: left; }
 .pager .disabled > a, .pager .disabled > a:hover, .pager .disabled > a:focus, .pager .disabled > span { color: #999999; background-color: white; cursor: not-allowed; }
 
-.label { display: inline; padding: .2em .6em .3em; font-size: 75%; font-weight: bold; line-height: 1; color: white; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: .25em; }
+.label { display: inline; padding: 0.2em 0.6em 0.3em; font-size: 75%; font-weight: bold; line-height: 1; color: white; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: .25em; }
 .label[href]:hover, .label[href]:focus { color: white; text-decoration: none; cursor: pointer; }
 .label:empty { display: none; }
 
@@ -1749,7 +1749,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 .carousel-control .icon-next:before { content: '\203a'; }
 
 .carousel-indicators { position: absolute; bottom: 10px; left: 50%; z-index: 15; width: 60%; margin-left: -30%; padding-left: 0; list-style: none; text-align: center; }
-.carousel-indicators li { display: inline-block; width: 10px; height: 10px; margin: 1px; text-indent: -999px; border: 1px solid white; border-radius: 10px; cursor: pointer; background-color: #000 \9; background-color: rgba(0, 0, 0, 0); }
+.carousel-indicators li { display: inline-block; width: 10px; height: 10px; margin: 1px; text-indent: -999px; border: 1px solid white; border-radius: 10px; cursor: pointer; background-color: black \9; background-color: rgba(0, 0, 0, 0); }
 .carousel-indicators .active { margin: 0; width: 12px; height: 12px; background-color: white; }
 
 .carousel-caption { position: absolute; left: 15%; right: 15%; bottom: 20px; z-index: 10; padding-top: 20px; padding-bottom: 20px; color: white; text-align: center; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
@@ -1885,7 +1885,7 @@ th.hidden-lg, td.hidden-lg { display: table-cell !important; }
   .hidden-print, tr.hidden-print, th.hidden-print, td.hidden-print { display: none !important; } }
 .main article { padding: 45px; }
 
-.paper { background-color: #fff; border-radius: 7px; border: 7px solid #ddd; position: relative; }
+.paper { background-color: #fff; border-radius: 7px; border: 7px solid #dddddd; position: relative; }
 
 .main { margin: 100px auto 60px auto; position: relative; display: block; text-align: left; max-width: 720px; }
 .main article { min-height: 300px; }
@@ -2028,7 +2028,7 @@ fieldset .remove { float: right; margin-right: 0; }
 .geopoint input[name="lat"], .geopoint input[name="long"] { float: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; width: 100%; }
 .geopoint input[name="alt"], .geopoint input[name="acc"] { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; display: block; float: right; width: 40%; }
 @media screen and (max-width: 700px) { .geopoint input[name="alt"], .geopoint input[name="acc"] { width: 50%; } }
-.geopoint .map-canvas { width: 100%; border: 1px solid #ccc; border-radius: 3px; margin-top: 10px; height: 275px; }
+.geopoint .map-canvas { width: 100%; border: 1px solid #cccccc; border-radius: 3px; margin-top: 10px; height: 275px; }
 .geopoint .map-canvas img { max-width: none; }
 
 .restoring-sanity-to-legends .or-appearance-list-nolabel, .restoring-sanity-to-legends .or-appearance-label { margin: -0.9em 0 -0.7em 0; }
@@ -2067,15 +2067,15 @@ fieldset .remove { float: right; margin-right: 0; }
 .bootstrap-timepicker-widget.dropdown-menu { padding: 4px; }
 .bootstrap-timepicker-widget.dropdown-menu.open { display: inline-block; }
 .bootstrap-timepicker-widget.dropdown-menu:before { border-bottom: 7px solid rgba(0, 0, 0, 0.2); border-left: 7px solid transparent; border-right: 7px solid transparent; content: ""; display: inline-block; position: absolute; }
-.bootstrap-timepicker-widget.dropdown-menu:after { border-bottom: 6px solid #FFFFFF; border-left: 6px solid transparent; border-right: 6px solid transparent; content: ""; display: inline-block; position: absolute; }
+.bootstrap-timepicker-widget.dropdown-menu:after { border-bottom: 6px solid white; border-left: 6px solid transparent; border-right: 6px solid transparent; content: ""; display: inline-block; position: absolute; }
 .bootstrap-timepicker-widget.timepicker-orient-left:before { left: 6px; }
 .bootstrap-timepicker-widget.timepicker-orient-left:after { left: 7px; }
 .bootstrap-timepicker-widget.timepicker-orient-right:before { right: 6px; }
 .bootstrap-timepicker-widget.timepicker-orient-right:after { right: 7px; }
 .bootstrap-timepicker-widget.timepicker-orient-top:before { top: -7px; }
 .bootstrap-timepicker-widget.timepicker-orient-top:after { top: -6px; }
-.bootstrap-timepicker-widget.timepicker-orient-bottom:before { bottom: -7px; border-bottom: 0; border-top: 7px solid #999; }
-.bootstrap-timepicker-widget.timepicker-orient-bottom:after { bottom: -6px; border-bottom: 0; border-top: 6px solid #ffffff; }
+.bootstrap-timepicker-widget.timepicker-orient-bottom:before { bottom: -7px; border-bottom: 0; border-top: 7px solid #999999; }
+.bootstrap-timepicker-widget.timepicker-orient-bottom:after { bottom: -6px; border-bottom: 0; border-top: 6px solid white; }
 .bootstrap-timepicker-widget a.btn, .bootstrap-timepicker-widget input { border-radius: 4px; }
 .bootstrap-timepicker-widget table { width: 100%; margin: 0; }
 .bootstrap-timepicker-widget table td { text-align: center; height: 30px; margin: 0; padding: 2px; }
@@ -2117,9 +2117,9 @@ fieldset .remove { float: right; margin-right: 0; }
 
 .datepicker-dropdown { top: 0; left: 0; }
 
-.datepicker-dropdown:before { content: ''; display: inline-block; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 7px solid #ccc; border-top: 0; border-bottom-color: rgba(0, 0, 0, 0.2); position: absolute; }
+.datepicker-dropdown:before { content: ''; display: inline-block; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 7px solid #cccccc; border-top: 0; border-bottom-color: rgba(0, 0, 0, 0.2); position: absolute; }
 
-.datepicker-dropdown:after { content: ''; display: inline-block; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 6px solid #ffffff; border-top: 0; position: absolute; }
+.datepicker-dropdown:after { content: ''; display: inline-block; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 6px solid white; border-top: 0; position: absolute; }
 
 .datepicker-dropdown.datepicker-orient-left:before { left: 6px; }
 
@@ -2133,9 +2133,9 @@ fieldset .remove { float: right; margin-right: 0; }
 
 .datepicker-dropdown.datepicker-orient-top:after { top: -6px; }
 
-.datepicker-dropdown.datepicker-orient-bottom:before { bottom: -7px; border-bottom: 0; border-top: 7px solid #999; }
+.datepicker-dropdown.datepicker-orient-bottom:before { bottom: -7px; border-bottom: 0; border-top: 7px solid #999999; }
 
-.datepicker-dropdown.datepicker-orient-bottom:after { bottom: -6px; border-bottom: 0; border-top: 6px solid #ffffff; }
+.datepicker-dropdown.datepicker-orient-bottom:after { bottom: -6px; border-bottom: 0; border-top: 6px solid white; }
 
 .datepicker > div { display: none; }
 
@@ -2175,7 +2175,7 @@ fieldset .remove { float: right; margin-right: 0; }
 
 .datepicker table tr td.range.today:active, .datepicker table tr td.range.today:hover:active, .datepicker table tr td.range.today.disabled:active, .datepicker table tr td.range.today.disabled:hover:active, .datepicker table tr td.range.today.active, .datepicker table tr td.range.today:hover.active, .datepicker table tr td.range.today.disabled.active, .datepicker table tr td.range.today.disabled:hover.active { background-color: #efe24b \9; }
 
-.datepicker table tr td.selected, .datepicker table tr td.selected:hover, .datepicker table tr td.selected.disabled, .datepicker table tr td.selected.disabled:hover { background-color: #9e9e9e; background-image: -moz-linear-gradient(top, #b3b3b3, gray); background-image: -ms-linear-gradient(top, #b3b3b3, gray); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b3b3b3), to(gray)); background-image: -webkit-linear-gradient(top, #b3b3b3, gray); background-image: -o-linear-gradient(top, #b3b3b3, gray); background-image: linear-gradient(top, #b3b3b3, gray); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3b3b3', endColorstr='#808080', GradientType=0); border-color: #808080 #808080 #595959; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); color: #fff; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
+.datepicker table tr td.selected, .datepicker table tr td.selected:hover, .datepicker table tr td.selected.disabled, .datepicker table tr td.selected.disabled:hover { background-color: #9e9e9e; background-image: -moz-linear-gradient(top, #b3b3b3, gray); background-image: -ms-linear-gradient(top, #b3b3b3, gray); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b3b3b3), to(gray)); background-image: -webkit-linear-gradient(top, #b3b3b3, gray); background-image: -o-linear-gradient(top, #b3b3b3, gray); background-image: linear-gradient(top, #b3b3b3, gray); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3b3b3', endColorstr='#808080', GradientType=0); border-color: gray gray #595959; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); color: #fff; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
 
 .datepicker table tr td.selected:hover, .datepicker table tr td.selected:hover:hover, .datepicker table tr td.selected.disabled:hover, .datepicker table tr td.selected.disabled:hover:hover, .datepicker table tr td.selected:active, .datepicker table tr td.selected:hover:active, .datepicker table tr td.selected.disabled:active, .datepicker table tr td.selected.disabled:hover:active, .datepicker table tr td.selected.active, .datepicker table tr td.selected:hover.active, .datepicker table tr td.selected.disabled.active, .datepicker table tr td.selected.disabled:hover.active, .datepicker table tr td.selected.disabled, .datepicker table tr td.selected:hover.disabled, .datepicker table tr td.selected.disabled.disabled, .datepicker table tr td.selected.disabled:hover.disabled, .datepicker table tr td.selected[disabled], .datepicker table tr td.selected:hover[disabled], .datepicker table tr td.selected.disabled[disabled], .datepicker table tr td.selected.disabled:hover[disabled] { background-color: #808080; }
 
@@ -2219,7 +2219,7 @@ fieldset .remove { float: right; margin-right: 0; }
 
 .input-daterange input:last-child { -webkit-border-radius: 0 3px 3px 0; -moz-border-radius: 0 3px 3px 0; border-radius: 0 3px 3px 0; }
 
-.input-daterange .add-on { display: inline-block; width: auto; min-width: 16px; height: 18px; padding: 4px 5px; font-weight: normal; line-height: 18px; text-align: center; text-shadow: 0 1px 0 #ffffff; vertical-align: middle; background-color: #eeeeee; border: 1px solid #ccc; margin-left: -5px; margin-right: -5px; }
+.input-daterange .add-on { display: inline-block; width: auto; min-width: 16px; height: 18px; padding: 4px 5px; font-weight: normal; line-height: 18px; text-align: center; text-shadow: 0 1px 0 white; vertical-align: middle; background-color: #eeeeee; border: 1px solid #cccccc; margin-left: -5px; margin-right: -5px; }
 
 /** fixes by martijn **/
 .date input[type="text"] { display: inline-block; width: 144px; }
