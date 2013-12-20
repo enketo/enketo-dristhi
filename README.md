@@ -18,7 +18,7 @@ External Drishti/Android depencies are mocked so it can be run in the browser.
 
 ### WATCH OUT WHEN UPGRADING TO V2.x!
 
-- requires re-doing XSLT Transformation (not yet deployed on enketo.org and enketo.formhub.org)
+- requires re-doing XSLT Transformation because XSL sheets changed
 - please thoroughly check the styling of some common forms and compare with the old forms (pay particular attention to repeats, font sizes, colors). I expect there may be some styling issuess I may have overlooked or that I considered to be improvements (due to upgrade to bootstrap3) but you may disagree.
 - see outstanding issues
 
