@@ -37,10 +37,10 @@ requirejs.config( {
     }
 } );
 
-requirejs( [ 'jquery', 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'gui', 'util' ],
-    function( $, Form, FormDataController, FormModelJSON, gui, util ) {
+requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'gui', 'util', 'jquery', 'plugins' ],
+    function( Form, FormDataController, FormModelJSON, gui, util, $ ) {
         'use strict';
-        var existingInstanceJSON, instanceToEditXMLStr, loadErrors, modelJSON, form,
+        var existingInstanceJSON, instanceToEditXMLStr, loadErrors, modelJSON, form, instanceId,
             queryParams = util.getAllQueryParams(),
             formDataController = new FormDataController( queryParams );
 
@@ -53,7 +53,8 @@ requirejs( [ 'jquery', 'enketo-js/Form', 'FormDataController', 'enketo-json/Form
 
         if ( !existingInstanceJSON ) {
             $( 'form.or' ).remove();
-            return gui.alert( 'Instance with id "' + settings.instanceId + '" could not be found.' );
+            instanceId = queryParams.instanceId || undefined;
+            return gui.alert( 'JSON Instance with id "' + instanceId + '" could not be found.' );
         }
 
         modelJSON = new FormModelJSON( existingInstanceJSON );
@@ -72,7 +73,7 @@ requirejs( [ 'jquery', 'enketo-js/Form', 'FormDataController', 'enketo-json/Form
             //something odd that seems to happen when adding things to DOM.
             setTimeout( function() {
                 if ( typeof form !== 'undefined' ) {
-                    form.validateForm();
+                    form.validate();
                     if ( !form.isValid() ) {
                         gui.alert( 'Form contains errors <br/>(please see fields marked in red)' );
                         $button.btnBusyState( false );
