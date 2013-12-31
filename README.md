@@ -11,9 +11,11 @@ External Drishti/Android depencies are mocked so it can be run in the browser.
 2. clone repo
 3. Use `grunt` to build.
 4. start webserver with `grunt server`.
-5. Access like this e.g.: [http://localhost:8080/build/template.html?formName=EC_Registration_24_5_12&instanceId=a&debug=true](http://localhost:8080/build/template.html?formName=EC_Registration_24_5_12&instanceId=a&debug=true)
-6. probably use dristhi.css as-is, but
-7. create your own **js build system** that includes the enketo and androidcontext objects and their dependencies (enketo-dristhi-combined.min.js includes require.js itself so you don't want to use that)
+5. go to [http://localhost:8080/build/dev.html](http://localhost:8080/build/dev.html) to see list of links to all Dristhi forms
+6. or access manually with query parameters like this e.g.: [http://localhost:8080/build/template.html?formName=EC_Registration_EngKan&instanceId=a&debug=true](http://localhost:8080/build/template.html?formName=EC_Registration_EngKan&instanceId=a&debug=true)
+7. note that the dev.html list includes instance=a which belongs to form EC_Registration_EngKan. It will throw load errors in the console for all other forms. Instance=c (is not up-to-date but) can be loaded into [PNC_Visit_EngKan](http://localhost:8080/build/template.html?formName=PNC_Visit_EngKan&instanceId=c&debug=true)
+8. probably use dristhi.css as-is, but
+9. create your own **js build system** that includes the enketo and androidcontext objects and their dependencies (enketo-dristhi-combined.min.js includes require.js itself so you don't want to use that)
 
 
 ### WATCH OUT WHEN UPGRADING TO V2.x!
