@@ -3,26 +3,26 @@ var mockInstances = {
     'a': {
         "form": {
             "bind_type": "eligible_couple",
-            "default_bind_path": "/model/instance/EC_Registration_24_5_12/",
+            "default_bind_path": "/model/instance/EC_Registration_EngKan/",
             "fields": [ {
                 "name": "uuid",
-                "bind": "/model/instance/EC_Registration_24_5_12/formhub/uuid"
+                "bind": "/model/instance/EC_Registration_EngKan/formhub/uuid"
             }, {
                 "name": "today"
             }, {
                 "name": "phc",
-                "bind": "/model/instance/EC_Registration_24_5_12/phc"
+                "bind": "/model/instance/EC_Registration_EngKan/phc"
             }, {
                 "name": "sc",
-                "bind": "/model/instance/EC_Registration_24_5_12/sbc_b",
+                "bind": "/model/instance/EC_Registration_EngKan/sub_center",
                 "source": "eligible_couple.subCenter",
                 "value": "bherya_a"
             }, {
                 "name": "household_number",
-                "bind": "/model/instance/EC_Registration_24_5_12/house_number"
+                "bind": "/model/instance/EC_Registration_EngKan/house_number"
             }, {
                 "name": "head_of_household",
-                "bind": "/model/instance/EC_Registration_24_5_12/head_house",
+                "bind": "/model/instance/EC_Registration_EngKan/hh_head",
                 "source": "eligible_couple.headOfHousehold",
                 "value": "Suresh"
             }, {
@@ -37,7 +37,7 @@ var mockInstances = {
                 "name": "woman_age"
             }, {
                 "name": "woman_dob",
-                "bind": "/model/instance/EC_Registration_24_5_12/woman_age"
+                "bind": "/model/instance/EC_Registration_EngKan/woman_age"
             }, {
                 "name": "husband_name",
                 "source": "eligible_couple.husband_name",
@@ -48,45 +48,40 @@ var mockInstances = {
                 "value": "apl"
             }, {
                 "name": "number_of_pregnancies",
-                "bind": "/model/instance/EC_Registration_24_5_12/numberofpregnancies",
+                "bind": "/model/instance/EC_Registration_EngKan/num_pregnancies",
                 "source": "eligible_couple.pregnancies",
                 "value": "1"
             }, {
                 "name": "number_of_abortions",
-                "bind": "/model/instance/EC_Registration_24_5_12/noofabortion"
+                "bind": "/model/instance/EC_Registration_EngKan/noofabortion"
             }, {
                 "name": "number_of_stillbirths",
-                "bind": "/model/instance/EC_Registration_24_5_12/noofstillbirth"
+                "bind": "/model/instance/EC_Registration_EngKan/noofstillbirth"
             }, {
                 "name": "number_of_living_children",
-                "bind": "/model/instance/EC_Registration_24_5_12/nooflivingchildren"
+                "bind": "/model/instance/EC_Registration_EngKan/nooflivingchildren"
             }, {
                 "name": "youngest_childs_dob",
-                "bind": "/model/instance/EC_Registration_24_5_12/youngest_child_age"
+                "bind": "/model/instance/EC_Registration_EngKan/youngest_child_age"
             }, {
                 "name": "fp_method",
-                "bind": "/model/instance/EC_Registration_24_5_12/familyplanning_methods",
-                "source": "eligible_couple.currentMethod",
-                "value": "none"
-            }, {
-                "name": "fp_method",
-                "bind": "/model/instance/EC_Registration_24_5_12/familyplanning_methods",
+                "bind": "/model/instance/EC_Registration_EngKan/familyplanning_method_1",
                 "source": "eligible_couple.currentMethod",
                 "value": "none"
             }, {
                 "name": "fp_start_date",
-                "bind": "/model/instance/EC_Registration_24_5_12/fp_start_date",
+                "bind": "/model/instance/EC_Registration_EngKan/date_familyplanningstart",
                 "source": "eligible_couple.familyPlanningMethodChangeDate",
                 "value": "---"
             }, {
                 "name": "message"
             }, {
                 "name": "instanceID",
-                "bind": "/model/instance/EC_Registration_24_5_12/meta/instanceID",
+                "bind": "/model/instance/EC_Registration_EngKan/meta/instanceID",
                 "value": "a"
             }, {
                 "name": "deprecatedID",
-                "bind": "/model/instance/EC_Registration_24_5_12/meta/deprecatedID"
+                "bind": "/model/instance/EC_Registration_EngKan/meta/deprecatedID"
             } ]
         }
     },
@@ -157,14 +152,6 @@ var mockInstances = {
             "bind_type": "mother",
             "default_bind_path": "/model/instance/PNC_Visit_EngKan/",
             "fields": [ {
-                "name": "id",
-                "source": "mother.id",
-                "value": "b0e3a8b4-3968-4ea1-b3eb-164f4bf9b8cb"
-            }, {
-                "name": "ecId",
-                "source": "mother.eligible_couple.id",
-                "value": "1d600855-046d-48ab-b595-c4fe40bd3bde"
-            }, {
                 "name": "pncVisitNumber",
                 "bind": "/model/instance/PNC_Visit_EngKan/case_pnc_number",
                 "source": "mother.pncVisitNumber"
@@ -407,10 +394,6 @@ var mockInstances = {
                         "bind": "/model/instance/PNC_Visit_EngKan/pnc_child_repeat/case_birthweight",
                         "source": "child.weight"
                     }, {
-                        "name": "bloodGroup",
-                        "bind": "/model/instance/PNC_Visit_EngKan/pnc_child_repeat/case_child_blood_group",
-                        "source": "child.bloodGroup"
-                    }, {
                         "name": "immunizationsGiven",
                         "bind": "/model/instance/PNC_Visit_EngKan/pnc_child_repeat/case_immunizations_atbirth",
                         "source": "child.immunizationsGiven"
@@ -479,19 +462,16 @@ var mockInstances = {
                     "id": "906c715d-1272-40e6-8656-5bbef3fdaa1b",
                     "gender": "male",
                     "weight": "3",
-                    "bloodGroup": "o_positive",
                     "immunizationsGiven": "bcg"
                 }, {
                     "id": "ca2c774e-1bb6-4497-ace2-6b07aa85bda9",
                     "gender": "female",
                     "weight": "4",
-                    "bloodGroup": "o_negative",
                     "immunizationsGiven": "opv_0"
                 }, {
                     "id": "f418700d-2b89-4835-9681-896cbf7b72b6",
                     "gender": "male",
                     "weight": "3.5",
-                    "bloodGroup": "ab_negative",
                     "immunizationsGiven": "opv_0 hepb_0"
                 } ]
             } ]
