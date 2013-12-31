@@ -1,0 +1,9 @@
+@mixin font-normal {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal; }
+
+@mixin font-bold {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+  font-weight: bold;
+  font-style: normal; }

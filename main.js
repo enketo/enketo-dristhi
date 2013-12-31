@@ -5,7 +5,7 @@ requirejs.config( {
         'enketo-widget': '../../lib/enketo-core/src/widget',
         'enketo-config': '../../config.json',
         'enketo-json': '../../lib/enketo-json/src',
-        'jquery.getXPath': '../../lib/enketo-json/lib/jquery-xpath/jquery.getXPath',
+        'jquery.xpath': '../../lib/enketo-core/lib/jquery-xpath/jquery.xpath',
         text: '../../lib/enketo-core/lib/text/text',
         xpath: '../../lib/enketo-core/lib/xpath/build/xpathjs_javarosa',
         gmaps: 'http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&callback=gmapsLoaded', // add API key
@@ -21,7 +21,7 @@ requirejs.config( {
         },
         'bootstrap': {
             deps: [ 'jquery' ],
-            exports: 'jQuery.fn.bootstrap'
+            exports: 'jQuery.fn.popover'
         },
         'widget/date/bootstrap3-datepicker/js/bootstrap-datepicker': {
             deps: [ 'jquery' ],

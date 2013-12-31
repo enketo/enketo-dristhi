@@ -1,0 +1,30 @@
+/* overriding main rules */
+body, h2,h3,h4,legend{
+    //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #0d0d0d;}
+h3 {
+  font-weight: bolder;
+  font-size: 30px; }
+.btn-info{
+    //slightly tweak bootstrap default
+    @include button-variant($btn-info-color, #5bc0de, $btn-info-border);
+    //@include btn-info-extension-flat;
+}
+
+.paper{
+    border: none; }
+
+/* overriding _form rules */
+.paper {
+    .form-language-selector {
+        border-right: none;}
+    .form-header {
+        display: none;} }
+.btn-radiocheck{
+    &:hover, &:focus, &:active, &[data-checked]{
+        background-color: #e4f4ff; } }
+.input-append .add-on{
+    padding: 13px 5px 7px 5px;
+}
+#submit-form progress{
+    margin: 0 auto -6px auto;}
