@@ -73,8 +73,8 @@ requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON'
             //something odd that seems to happen when adding things to DOM.
             setTimeout( function() {
                 if ( typeof form !== 'undefined' ) {
-                    form.validate();
-                    if ( !form.isValid() ) {
+
+                    if ( !form.validate() ) {
                         gui.alert( 'Form contains errors <br/>(please see fields marked in red)' );
                         $button.btnBusyState( false );
                         return;

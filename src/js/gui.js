@@ -18,21 +18,21 @@ define( [ 'jquery', 'bootstrap' ], function( $ ) {
 
 
     /**
-     * Shows a modal alert box with a message.
+     * Shows a modal alert box with a message (exact copy of gui.alert in the gui module of MartijnR/enketo) except for the removal
+     * of capitalizeStart()
      *
      * @param {string} message
      * @param {string=} heading
-     * @param {string=} level bootstrap css class
+     * @param {string=} level bootstrap css class or normal (no styling)
      * @param {number=} duration duration in secondsafter which dialog should self-destruct
      */
     function alert( message, heading, level, duration ) {
-        "use strict";
         var cls, timer,
             $alert = $( '#dialog-alert' );
 
         heading = heading || 'Alert';
-        level = level || 'error';
-        cls = ( level === 'normal' ) ? '' : 'alert alert-block alert-' + level;
+        level = level || 'danger';
+        cls = ( level === 'normal' ) ? '' : 'alert alert-' + level;
 
         //write content into alert dialog
         $alert.find( '.modal-header h3' ).text( heading );
@@ -43,13 +43,13 @@ define( [ 'jquery', 'bootstrap' ], function( $ ) {
             show: true
         } );
 
-        $alert.on( 'hidden', function() {
+        $alert.on( 'hidden.bs.modal', function() {
             $alert.find( '.modal-header h3, .modal-body p' ).html( '' );
             clearInterval( timer );
         } );
 
         if ( typeof duration === 'number' ) {
-            var left = duration.toString();
+            var left = duration;
             $alert.find( '.self-destruct-timer' ).text( left );
             timer = setInterval( function() {
                 left--;
@@ -60,6 +60,10 @@ define( [ 'jquery', 'bootstrap' ], function( $ ) {
                 $alert.find( '.close' ).click();
             }, duration * 1000 );
         }
+
+        /* sample test code (for console):
+         * gui.alert('What did you just do???', 'Obtrusive alert dialog');
+         */
     }
 
     return {

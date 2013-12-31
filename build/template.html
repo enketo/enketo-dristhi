@@ -8,7 +8,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 
-		<link type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" media="all" rel="stylesheet" />
 		<link href="css/dristhi.css" media="all" rel="stylesheet" type="text/css">
 
 <!--    separate and unminified: -->
@@ -37,18 +36,22 @@
 	</head>
 	<body>
 
-		<div id="dialog-alert" class="modal hide fade ">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h3></h3>
-			</div>
-			<div class="modal-body">
-				<p class="alert alert-block alert-danger"></p>
-			</div>
-			<div class="modal-footer">
-				<span class="self-destruct-timer"></span>
-				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		<div id="dialog-alert" class="modal fade" role="dialog" aria-labelledby="alert dialog" aria-hidden="true"  data-keyboard="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3></h3>
+					</div>
+					<div class="modal-body">
+						<p class=""></p>
+					</div>
+					<div class="modal-footer">
+						<span class="self-destruct-timer"></span>
+						<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+					</div>
 				</div>
+			</div>
 		</div>
 
 		<div class="main">
