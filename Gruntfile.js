@@ -67,7 +67,14 @@ module.exports = function( grunt ) {
                     baseUrl: 'src/js',
                     mainConfigFile: "main.js",
                     findNestedDependencies: true,
-                    include: [ '../../lib/enketo-core/lib/require.js', 'enketo-js/Widget' ].concat( grunt.file.readJSON( 'config.json' ).widgets ),
+                    include: ( function() {
+                        //add widgets js and widget config.json files
+                        var widgets = grunt.file.readJSON( 'config.json' ).widgets;
+                        widgets.forEach( function( widget, index, arr ) {
+                            arr.push( 'text!' + widget.substr( 0, widget.lastIndexOf( '/' ) + 1 ) + 'config.json' );
+                        } );
+                        return [ '../../lib/enketo-core/lib/require.js', 'enketo-js/Widget' ].concat( widgets );
+                    } )(),
                     out: "build/js/enketo-dristhi-combined.min.js",
                     optimize: "uglify2"
                 }
