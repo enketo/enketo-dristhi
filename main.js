@@ -45,9 +45,9 @@ requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON'
             formDataController = new FormDataController( queryParams );
 
         //switches to touch=true, useful for desktop development, won't affect performance of production app.
-        if ( typeof setToMobileMode === 'function' ) {
-            setToMobileMode();
-        }
+        //if ( typeof setToMobileMode === 'function' ) {
+        //    setToMobileMode();
+        //}
 
         existingInstanceJSON = formDataController.get();
 
