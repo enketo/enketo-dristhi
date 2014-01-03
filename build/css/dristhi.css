@@ -1460,7 +1460,7 @@ h4 { text-align: left; }
 
 legend { position: relative; line-height: 12px; border: none; }
 legend > span { vertical-align: 12px; }
-legend ~ label { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; display: block; margin: 0; padding: 5px 0 3px 0; }
+legend ~ label { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; display: block; margin: 0; padding: 0; }
 legend ~ label.with-media { padding: 0; }
 legend ~ label:not(.btn-radiocheck):hover { background-color: #fddecd; }
 legend ~ label .active { margin-left: 5px; }
@@ -1471,7 +1471,7 @@ label, legend, .trigger, .note { font-size: 1em; }
 
 input:not([type="radio"]):not([type="checkbox"]), textarea, select, .widget { display: block; margin: 8px 0 0 0; }
 
-.touch input:not([type="radio"]):not([type="checkbox"]), .touch textarea, .touch select { border-radius: 2px; margin: 10px 0 10px 0; color: #104b66; background-color: #f5f2ed; }
+.touch input:not([type="radio"]):not([type="checkbox"]), .touch textarea, .touch select { border-radius: 2px; margin: 10px 0 10px 0; color: #104b66; }
 .touch .input-append .add-on { margin-top: 10px; }
 .touch input:not([type="radio"]):not([type="checkbox"]), .touch textarea { border: 1px solid #ddd8ce; }
 
@@ -1806,12 +1806,21 @@ h3 { font-weight: bolder; font-size: 30px; }
 .btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active { background-color: #5bc0de; border-color: #46b8da; }
 .btn-info .badge { color: #5bc0de; background-color: white; }
 
+#submit-form { width: 100%; margin-left: auto; margin-right: auto; left: auto; color: white; background-color: #419720; border-color: #247a0a; }
+#submit-form:hover, #submit-form:focus, #submit-form:active, #submit-form.active { color: white; background-color: #337519; border-color: #134105; }
+.open #submit-form.dropdown-toggle { color: white; background-color: #337519; border-color: #134105; }
+#submit-form:active, #submit-form.active { background-image: none; }
+.open #submit-form.dropdown-toggle { background-image: none; }
+#submit-form.disabled, #submit-form.disabled:hover, #submit-form.disabled:focus, #submit-form.disabled:active, #submit-form.disabled.active, #submit-form[disabled], #submit-form[disabled]:hover, #submit-form[disabled]:focus, #submit-form[disabled]:active, #submit-form[disabled].active, fieldset[disabled] #submit-form, fieldset[disabled] #submit-form:hover, fieldset[disabled] #submit-form:focus, fieldset[disabled] #submit-form:active, fieldset[disabled] #submit-form.active { background-color: #419720; border-color: #247a0a; }
+#submit-form .badge { color: #419720; background-color: white; }
+
 .paper { border: none; }
 
 /* overriding _form rules */
 .paper .form-language-selector { border-right: none; }
 .paper .form-header { display: none; }
 
+.btn-radiocheck { background-color: transparent; border: 1px solid #ccc; box-shadow: none; border-radius: 4px; }
 .btn-radiocheck:hover, .btn-radiocheck:focus, .btn-radiocheck:active, .btn-radiocheck[data-checked] { background-color: #e4f4ff; }
 
 .input-append .add-on { padding: 13px 5px 7px 5px; }
