@@ -37,8 +37,8 @@ requirejs.config( {
     }
 } );
 
-requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'Modernizr', 'gui', 'util', 'jquery', 'plugins' ],
-    function( Form, FormDataController, FormModelJSON, Modernizr, gui, util, $ ) {
+requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'gui', 'util', 'jquery', 'plugins' ],
+    function( Form, FormDataController, FormModelJSON, gui, util, $ ) {
         'use strict';
         var existingInstanceJSON, instanceToEditXMLStr, loadErrors, modelJSON, form, instanceId,
             queryParams = util.getAllQueryParams(),
