@@ -1460,22 +1460,24 @@ h4 { text-align: left; }
 .question { font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif; font-weight: bold; font-style: normal; display: block; margin: 0 0 0.7em 0; padding-top: 0.9em; }
 .question > fieldset { padding: 0; margin: 0; }
 
-legend { position: relative; line-height: 12px; border: none; }
-legend > span { vertical-align: 12px; }
-legend ~ label { font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; display: block; margin: 0; padding: 0; }
-legend ~ label.with-media { padding: 0; }
-legend ~ label:not(.btn-radiocheck):hover { background-color: #fddecd; }
-legend ~ label .active { margin-left: 5px; }
-
 label, legend, .trigger, .note { font-size: 1em; }
 
 .or img, .or audio, .or video { float: right; max-height: 300px; max-width: 70%; }
 
-input:not([type="radio"]):not([type="checkbox"]), textarea, select, .widget { display: block; margin: 8px 0 0 0; }
+legend { position: relative; line-height: 12px; border: none; }
+legend > span { vertical-align: 12px; }
+legend ~ label { font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; display: block; margin: 0; padding: 4px 0 0 0; }
+legend ~ label.with-media { padding: 0; }
+legend ~ label:hover { background-color: #fddecd; }
+legend ~ label .active { margin-left: 5px; }
 
+.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label { background-color: transparent; border: 1px solid #ccc; border-radius: 4px; width: 100%; line-height: 40px; text-align: left; margin-bottom: .4em; }
+.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label input[type="radio"], .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label input[type="checkbox"] { margin-top: 10px; margin-left: 15px; }
+.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label:focus, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label:hover, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label:active, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label[data-checked] { background-color: #fee5d6; }
 .touch input:not([type="radio"]):not([type="checkbox"]), .touch textarea, .touch select { border-radius: 2px; margin: 10px 0 10px 0; color: #104b66; }
-.touch .input-append .add-on { margin-top: 10px; }
 .touch input:not([type="radio"]):not([type="checkbox"]), .touch textarea { border: 1px solid #ddd8ce; }
+
+input:not([type="radio"]):not([type="checkbox"]), textarea, select, .widget { display: block; margin: 8px 0 0 0; }
 
 input:not([type="radio"]):not([type="checkbox"]), textarea { height: 34px; }
 
@@ -1557,10 +1559,6 @@ input:not([type="radio"]):not([type="checkbox"]), textarea { height: 34px; }
 .question.or-appearance-label legend ~ label:hover { background-color: transparent; }
 .question.or-appearance-label input { float: none; display: none !important; }
 .question.or-appearance-label img { max-height: 30px; max-width: 30px; float: none; }
-
-.btn-radiocheck { box-shadow: inset 0 -1px 0 rgba(90, 90, 90, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05); border-radius: 2px; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); width: 100%; line-height: 40px; text-align: left; margin-bottom: .4em; background-color: #f0f0f0; }
-.btn-radiocheck input { margin-left: 15px; }
-.btn-radiocheck:focus, .btn-radiocheck:hover, .btn-radiocheck:active, .btn-radiocheck[data-checked] { background-color: #fee5d6; }
 
 /*
  * Timepicker Component for Twitter Bootstrap
@@ -1822,9 +1820,6 @@ h3 { font-weight: bolder; font-size: 30px; }
 .paper .form-language-selector { border-right: none; }
 .paper .form-header { display: none; }
 
-.btn-radiocheck { background-color: transparent; border: 1px solid #ccc; box-shadow: none; border-radius: 4px; }
-.btn-radiocheck:hover, .btn-radiocheck:focus, .btn-radiocheck:active, .btn-radiocheck[data-checked] { background-color: #e4f4ff; }
-
-.input-append .add-on { padding: 13px 5px 7px 5px; }
+.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label:focus, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label:hover, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label:active, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label[data-checked] { background-color: #e4f4ff; }
 
 #submit-form progress { margin: 0 auto 0 auto; }
