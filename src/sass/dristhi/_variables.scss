@@ -2,6 +2,7 @@ $baseFontSize: 22px;
 $baseLineHeight: 22px;
 
 $accent-color-1: #CE4F07;
+$repeat-bg: lighten($accent-color-1, 55%);
 
 $images-path: '../images/';
 $icon-font-path: '../font/';
