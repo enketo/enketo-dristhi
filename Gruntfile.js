@@ -125,5 +125,5 @@ module.exports = function( grunt ) {
     grunt.registerTask( 'compile', [ 'requirejs:compile' ] );
     grunt.registerTask( 'server', [ 'connect:server:keepalive' ] );
     grunt.registerTask( 'test', [ 'jsbeautifier:test', 'jshint', 'compile' ] );
-    grunt.registerTask( 'default', [ 'jsbeautifier:test', 'jshint', 'sass', 'compile' ] );
+    grunt.registerTask( 'default', [ 'jsbeautifier:test', 'jshint', 'style', 'compile' ] );
 };

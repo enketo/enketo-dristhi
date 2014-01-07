@@ -1762,6 +1762,15 @@ input:not([type="radio"]):not([type="checkbox"]), textarea { height: 34px; }
 
 .with-media > input[type="radio"] ~ span.active:not(.or-hint):not(.or-constraint-msg), .with-media > input[type="checkbox"] ~ span.active:not(.or-hint):not(.or-constraint-msg) { display: block; margin: -2px 0 0 40px; }
 
+.or-appearance-likert .option-wrapper { display: -ms-flexbox; /*IE10*/ display: -webkit-flex; display: flex; -webkit-flex-wrap: nowrap; -ms-flex-wrap: nowrap; -moz-flex-wrap: nowrap; flex-wrap: nowrap; -webkit-flex-direction: row; -ms-flex-direction: row; -moz-flex-direction: row; flex-direction: row; }
+.or-appearance-likert .option-wrapper > label { -webkit-flex: 1; -ms-flex: 1; flex: 1; display: -ms-flexbox; /*IE10*/ display: -webkit-flex; display: flex; -webkit-flex-wrap: nowrap; -ms-flex-wrap: nowrap; -moz-flex-wrap: nowrap; flex-wrap: nowrap; -webkit-flex-direction: column; -ms-flex-direction: column; -moz-flex-direction: column; flex-direction: column; float: none; padding-right: 0; }
+.or-appearance-likert .option-wrapper > label input[type=radio], .or-appearance-likert .option-wrapper > label input[type=checkbox] { position: relative; left: 50%; padding: 0; margin-left: -10px; background-color: white; z-index: 10; }
+.or-appearance-likert .option-wrapper > label .active { margin: 0; }
+.or-appearance-likert .option-wrapper > label .option-label { position: relative; flex: 1; text-align: center; margin-top: -13px; padding-top: 15px; border-top: 3px solid #ccc; font-size: 12px; font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; }
+.or-appearance-likert .option-wrapper > label:first-of-type .option-label::after { content: ''; display: block; position: absolute; top: -5px; width: 50%; background-color: white; height: 10px; left: 0; }
+.or-appearance-likert .option-wrapper > label:last-of-type .option-label::after { content: ''; display: block; position: absolute; top: -5px; width: 50%; background-color: white; height: 10px; right: 0; }
+.or-appearance-likert .option-wrapper > label:hover { background-color: transparent; }
+
 @media screen and (max-width: 720px) { body { padding: 0 !important; }
   body header { padding-left: 20px; padding-right: 20px; }
   body { background: none; }
