@@ -471,7 +471,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 
 .collapsing { position: relative; height: 0; overflow: hidden; -webkit-transition: height 0.35s ease; transition: height 0.35s ease; }
 
-@font-face { font-family: 'Glyphicons Halflings'; src: url(twbs-font-path("../font/glyphicons-halflings-regular.eot")); src: url(twbs-font-path("../font/glyphicons-halflings-regular.eot?#iefix")) format("embedded-opentype"), url(twbs-font-path("../font/glyphicons-halflings-regular.woff")) format("woff"), url(twbs-font-path("../font/glyphicons-halflings-regular.ttf")) format("truetype"), url(twbs-font-path("../font/glyphicons-halflings-regular.svg#glyphicons-halflingsregular")) format("svg"); }
+@font-face { font-family: 'Glyphicons Halflings'; src: url("../font/glyphicons-halflings-regular.eot"); src: url("../font/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../font/glyphicons-halflings-regular.woff") format("woff"), url("../font/glyphicons-halflings-regular.ttf") format("truetype"), url("../font/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format("svg"); }
 
 .glyphicon { position: relative; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
@@ -1087,6 +1087,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 @media (min-width: 768px) { .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand { margin-left: -15px; } }
 
 .navbar-toggle { position: relative; float: right; margin-right: 15px; padding: 9px 10px; margin-top: 8px; margin-bottom: 8px; background-color: transparent; background-image: none; border: 1px solid transparent; border-radius: 4px; }
+.navbar-toggle:focus { outline: none; }
 .navbar-toggle .icon-bar { display: block; width: 22px; height: 2px; border-radius: 1px; }
 .navbar-toggle .icon-bar + .icon-bar { margin-top: 4px; }
 @media (min-width: 768px) { .navbar-toggle { display: none; } }
@@ -1403,13 +1404,15 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
   tr.visible-print { display: table-row !important; }
   th.visible-print, td.visible-print { display: table-cell !important; } }
 @media print { .hidden-print, tr.hidden-print, th.hidden-print, td.hidden-print { display: none !important; } }
-html, body, .main { min-height: 100%; }
+html { height: 100%; }
+
+body { position: relative; min-height: 100%; }
 
 .main article { padding: 45px; }
 
 .paper { background-color: #fff; border-radius: 7px; border: 7px solid #ddd; position: relative; }
 
-.main { margin: 100px auto 60px auto; position: relative; display: block; text-align: left; width: 100%; max-width: 720px; }
+.main { margin: 0 auto; padding: 100px 0 70px 0; position: relative; display: block; text-align: left; width: 100%; max-width: 720px; }
 .main article { min-height: 300px; }
 .main ul.nav-tabs { margin: 20px 0 0 0; }
 .main ul.nav-tabs li { margin: 0; }
@@ -1439,7 +1442,7 @@ h3 { padding: 5px 0 15px 0; word-wrap: break-word; }
 h4 { text-align: left; }
 
 /** hide stuff **/
-.or [lang]:not(.active), .or-option-translations, .or-appearance-page-break, .or-constraint-msg, .or-required-msg, .itemset-template, .itemset-labels { display: none; }
+.or [lang]:not(.active), .or-option-translations, .or-appearance-page-break, .or-constraint-msg, .or-required-msg, .option-wrapper .itemset-template, .itemset-labels { display: none; }
 
 /** hints **/
 .or-hint.active { font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; color: #888888; display: block; line-height: 16px; font-weight: normal; font-size: 11px; font-style: italic; padding-top: 5px; }
@@ -1466,14 +1469,18 @@ label, legend, .trigger, .note { font-size: 1em; }
 
 legend { position: relative; line-height: 12px; border: none; }
 legend > span { vertical-align: 12px; }
-legend ~ label { font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; display: block; margin: 0; padding: 4px 0 0 0; }
-legend ~ label.with-media { padding: 0; }
-legend ~ label:hover { background-color: #fddecd; }
-legend ~ label .active { margin-left: 5px; }
 
-.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label { background-color: transparent; border: 1px solid #ccc; border-radius: 4px; width: 100%; line-height: 40px; text-align: left; margin-bottom: .4em; }
-.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label input[type="radio"], .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label input[type="checkbox"] { margin-top: 10px; margin-left: 15px; }
-.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label:focus, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label:hover, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label:active, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) legend ~ label[data-checked] { background-color: #fee5d6; }
+.option-wrapper > label { font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; display: block; margin: 0; padding: 4px 0 4px 0; }
+.option-wrapper > label.with-media { padding: 0; }
+.option-wrapper > label:hover { background-color: #fddecd; }
+.option-wrapper > label .active { margin-left: 5px; }
+
+.or-appearance-horizontal label { padding-right: 10px; float: left; }
+.or-appearance-horizontal [type="radio"], .or-appearance-horizontal [type="checkbox"] { width: auto; }
+
+.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label { background-color: transparent; border: 1px solid #ccc; border-radius: 4px; width: 100%; line-height: 40px; text-align: left; margin-bottom: .4em; }
+.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label input[type="radio"], .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label input[type="checkbox"] { margin-top: 10px; margin-left: 15px; }
+.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label:focus, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label:hover, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label:active, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label[data-checked] { background-color: #fee5d6; }
 .touch input:not([type="radio"]):not([type="checkbox"]), .touch textarea, .touch select { border-radius: 2px; margin: 10px 0 10px 0; color: #104b66; }
 .touch input:not([type="radio"]):not([type="checkbox"]), .touch textarea { border: 1px solid #ddd8ce; }
 
@@ -1491,7 +1498,7 @@ input:not([type="radio"]):not([type="checkbox"]), textarea { height: 34px; }
 
 .alert, .note, .trigger { margin-bottom: 4px; }
 
-.trigger, .note { font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; padding: 7px 12px; margin: 1em 0; }
+.trigger, .note { font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; display: block; padding: 7px 12px; margin: 1em 0; }
 .trigger input[readonly]:not([type=radio]):not([type=checkbox]), .note input[readonly]:not([type=radio]):not([type=checkbox]) { display: none; }
 .trigger input[readonly]:not([type=radio]):not([type=checkbox]).has-value, .note input[readonly]:not([type=radio]):not([type=checkbox]).has-value { display: block; }
 
@@ -1547,8 +1554,8 @@ input:not([type="radio"]):not([type="checkbox"]), textarea { height: 34px; }
 
 .or-appearance-list-nolabel, .or-appearance-label { margin: -0.9em 0 -0.7em 0; }
 .or-appearance-list-nolabel legend, .or-appearance-label legend { float: left; border: none; line-height: 17px; max-width: 40%; min-height: 1px; }
-.or-appearance-list-nolabel label, .or-appearance-label label { float: left; display: block; text-align: center; }
-.or-appearance-list-nolabel label .active, .or-appearance-label label .active { margin: 0 auto; }
+.or-appearance-list-nolabel .option-wrapper > label, .or-appearance-label .option-wrapper > label { float: left; display: block; text-align: center; }
+.or-appearance-list-nolabel .option-wrapper > label .active, .or-appearance-label .option-wrapper > label .active { margin: 0 auto; }
 .or-appearance-list-nolabel input, .or-appearance-label input { margin: 0 10px 0 10px; text-align: center; }
 
 .question.or-appearance-list-nolabel { border-top: none; }
@@ -1556,7 +1563,8 @@ input:not([type="radio"]):not([type="checkbox"]), textarea { height: 34px; }
 .question.or-appearance-list-nolabel label .active { display: none !important; float: none; }
 
 .question.or-appearance-label { border-bottom: none; }
-.question.or-appearance-label legend ~ label:hover { background-color: transparent; }
+.question.or-appearance-label legend ~ .option-wrapper > label { margin-bottom: 6px; }
+.question.or-appearance-label legend ~ .option-wrapper > label:hover { background-color: transparent; }
 .question.or-appearance-label input { float: none; display: none !important; }
 .question.or-appearance-label img { max-height: 30px; max-width: 30px; float: none; }
 
@@ -1744,9 +1752,9 @@ input:not([type="radio"]):not([type="checkbox"]), textarea { height: 34px; }
 .touch .bootstrap-timepicker-widget.dropdown-menu input { width: 50px; margin: 0 auto; }
 
 .or-appearance-compact legend, .or-appearance-quickcompact legend { border: none; }
-.or-appearance-compact legend ~ label, .or-appearance-quickcompact legend ~ label { float: left; }
-.or-appearance-compact legend ~ label:hover, .or-appearance-quickcompact legend ~ label:hover { background: none; }
-.or-appearance-compact legend ~ label span.active:not(.or-hint):not(.or-constraint-msg), .or-appearance-quickcompact legend ~ label span.active:not(.or-hint):not(.or-constraint-msg) { margin-left: 0; display: none; }
+.or-appearance-compact .option-wrapper > label, .or-appearance-quickcompact .option-wrapper > label { float: left; }
+.or-appearance-compact .option-wrapper > label:hover, .or-appearance-quickcompact .option-wrapper > label:hover { background: none; }
+.or-appearance-compact .option-wrapper > label span.active:not(.or-hint):not(.or-constraint-msg), .or-appearance-quickcompact .option-wrapper > label span.active:not(.or-hint):not(.or-constraint-msg) { margin-left: 0; display: none; }
 .or-appearance-compact input, .or-appearance-quickcompact input { display: none; }
 .or-appearance-compact input ~ img.active, .or-appearance-quickcompact input ~ img.active { margin-left: 0; max-width: 150px; max-height: 150px; border: 2px solid transparent; }
 .or-appearance-compact input ~ img:hover, .or-appearance-quickcompact input ~ img:hover { border-color: #faa474; }
@@ -1757,7 +1765,7 @@ input:not([type="radio"]):not([type="checkbox"]), textarea { height: 34px; }
 @media screen and (max-width: 720px) { body { padding: 0 !important; }
   body header { padding-left: 20px; padding-right: 20px; }
   body { background: none; }
-  .main { margin: 0; }
+  .main { margin: 0; padding: 0; }
   .preview-header { top: -5px; }
   .paper { border-radius: 0px; }
   .form-header { top: 0; padding-left: 16px; padding-right: 16px; border-bottom: 1px solid #bbbbbb; }
@@ -1772,23 +1780,21 @@ input:not([type="radio"]):not([type="checkbox"]), textarea { height: 34px; }
   .form-header { margin: 5px 0; }
   .form-header .form-language-selector { border-right: none; } }
 /* fancy radio buttons / checkboxes */
-legend ~ label .active { margin-left: 0; }
+legend ~ .option-wrapper > label .active { margin-left: 0; }
 
-.question input[type=radio], .question input[type=checkbox] { background: url("../images/checkradio.png") no-repeat; cursor: pointer; -webkit-appearance: none; -moz-background-position-x: -9999px -9999px !important; -moz-background-position-y: -9999px -9999px !important; -ms-background-position-x: -9999px !important; -ms-background-position-y: -9999px !important; float: left; border: none; width: 22px; height: 22px; margin: 0 10px 1px 10px; }
+.option-wrapper input[type=radio], .option-wrapper input[type=checkbox] { background: url("../images/checkradio.png") no-repeat; cursor: pointer; -webkit-appearance: none; -moz-background-position-x: -9999px -9999px !important; -moz-background-position-y: -9999px -9999px !important; -ms-background-position-x: -9999px !important; -ms-background-position-y: -9999px !important; float: left; border: none; width: 20px; height: 20px; margin: 0 10px 1px 10px; }
 
-.question input[type=checkbox] { background-position: 0 0; }
-.question input[type=checkbox]:checked { background-position: -22px 0; }
+.option-wrapper input[type=checkbox] { background-position: 0 0; }
+.option-wrapper input[type=checkbox]:checked { background-position: -22px 0; }
 
-.question:disabled input[type=checkbox], input[type=checkbox]:disabled { cursor: default; background-position: -44px 0; }
-.question:disabled input[type=checkbox]:checked, input[type=checkbox]:disabled:checked { background-position: -66px 0; }
+.question:disabled .option-wrapper input[type=checkbox], .option-wrapper input[type=checkbox]:disabled { cursor: default; background-position: -44px 0; }
+.question:disabled .option-wrapper input[type=checkbox]:checked, .option-wrapper input[type=checkbox]:disabled:checked { background-position: -66px 0; }
 
-.question input[type=radio] { background-position: -88px 0; }
-.question input[type=radio]:checked { background-position: -110px 0; }
+.option-wrapper input[type=radio] { background-position: -88px 0; }
+.option-wrapper input[type=radio]:checked { background-position: -110px 0; }
 
-:disabled input[type=radio], input[type=radio]:disabled { cursor: default; background-position: -132px 0; }
-:disabled input[type=radio]:checked, input[type=radio]:disabled:checked { background-position: -154px 0; }
-
-.btn-radiocheck input[type=radio], .btn-radiocheck input[type=checkbox] { margin-top: 9px; }
+.question:disabled input[type=radio], .option-wrapper input[type=radio]:disabled { cursor: default; background-position: -132px 0; }
+.question:disabled input[type=radio]:checked, .option-wrapper input[type=radio]:disabled:checked { background-position: -154px 0; }
 
 /** apply bootstrap .form-control class by default **/
 .btn-reset .glyphicon-trash { vertical-align: bottom; }

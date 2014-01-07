@@ -19,9 +19,10 @@ External Drishti/Android depencies are mocked so it can be run in the browser.
 10. create your own **js build system** that includes the enketo and androidcontext objects and their dependencies (enketo-dristhi-combined.min.js includes require.js itself so you don't want to use that)
 
 
-### WATCH OUT WHEN UPGRADING TO V2.x!
+### WATCH OUT WHEN UPGRADING!
 
-- requires re-doing XSLT Transformation because XSL sheets changed
+- although the built js file is included you'd want to ignore this and create your own build without the js mocks
+- requires re-doing XSLT Transformation if XSL sheets changed (assume that they changed)
 - please thoroughly check the styling of some common forms and compare with the old forms (pay particular attention to repeats, font sizes, colors). I expect there may be some styling issuess I may have overlooked or that I considered to be improvements (due to upgrade to bootstrap3) but you may disagree.
 - see outstanding issues
 
