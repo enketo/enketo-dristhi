@@ -122,14 +122,14 @@ hr { margin-top: 20px; margin-bottom: 20px; border: 0; border-top: 1px solid #ee
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: inherit; font-weight: 500; line-height: 1.1; color: inherit; }
-h1 small, h1 .small, h2 small, h2 .small, h3 small, h3 .small, h4 small, h4 .small, h5 small, h5 .small, h6 small, h6 .small, .h1 small, .h1 .small, .h2 small, .h2 .small, .h3 small, .h3 .small, .h4 small, .h4 .small, .h5 small, .h5 .small, .h6 small, .h6 .small { font-weight: normal; line-height: 1; color: #999999; }
+h1, h2, h3, h4, .question.or-appearance-list-nolabel ~ .note, .question.or-appearance-label ~ .note, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: inherit; font-weight: 500; line-height: 1.1; color: inherit; }
+h1 small, h1 .small, h2 small, h2 .small, h3 small, h3 .small, h4 small, .question.or-appearance-list-nolabel ~ .note small, .question.or-appearance-label ~ .note small, h4 .small, .question.or-appearance-list-nolabel ~ .note .small, .question.or-appearance-label ~ .note .small, h5 small, h5 .small, h6 small, h6 .small, .h1 small, .h1 .small, .h2 small, .h2 .small, .h3 small, .h3 .small, .h4 small, .h4 .small, .h5 small, .h5 .small, .h6 small, .h6 .small { font-weight: normal; line-height: 1; color: #999999; }
 
 h1, .h1, h2, .h2, h3, .h3 { margin-top: 20px; margin-bottom: 10px; }
 h1 small, h1 .small, .h1 small, .h1 .small, h2 small, h2 .small, .h2 small, .h2 .small, h3 small, h3 .small, .h3 small, .h3 .small { font-size: 65%; }
 
-h4, .h4, h5, .h5, h6, .h6 { margin-top: 10px; margin-bottom: 10px; }
-h4 small, h4 .small, .h4 small, .h4 .small, h5 small, h5 .small, .h5 small, .h5 .small, h6 small, h6 .small, .h6 small, .h6 .small { font-size: 75%; }
+h4, .question.or-appearance-list-nolabel ~ .note, .question.or-appearance-label ~ .note, .h4, h5, .h5, h6, .h6 { margin-top: 10px; margin-bottom: 10px; }
+h4 small, .question.or-appearance-list-nolabel ~ .note small, .question.or-appearance-label ~ .note small, h4 .small, .question.or-appearance-list-nolabel ~ .note .small, .question.or-appearance-label ~ .note .small, .h4 small, .h4 .small, h5 small, h5 .small, .h5 small, .h5 .small, h6 small, h6 .small, .h6 small, .h6 .small { font-size: 75%; }
 
 h1, .h1 { font-size: 36px; }
 
@@ -137,7 +137,7 @@ h2, .h2 { font-size: 30px; }
 
 h3, .h3 { font-size: 24px; }
 
-h4, .h4 { font-size: 18px; }
+h4, .question.or-appearance-list-nolabel ~ .note, .question.or-appearance-label ~ .note, .h4 { font-size: 18px; }
 
 h5, .h5 { font-size: 14px; }
 
@@ -1204,7 +1204,7 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge { color: #4
 a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active { border-color: #428bca; }
 
 .alert, .note, .trigger { padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; }
-.alert h4, .note h4, .trigger h4 { margin-top: 0; color: inherit; }
+.alert h4, .note h4, .trigger h4, .alert .question.or-appearance-list-nolabel ~ .note, .note .question.or-appearance-list-nolabel ~ .note, .trigger .question.or-appearance-list-nolabel ~ .note, .alert .question.or-appearance-label ~ .note, .note .question.or-appearance-label ~ .note, .trigger .question.or-appearance-label ~ .note { margin-top: 0; color: inherit; }
 .alert .alert-link, .note .alert-link, .trigger .alert-link { font-weight: bold; }
 .alert > p, .note > p, .trigger > p, .alert > ul, .note > ul, .trigger > ul { margin-bottom: 0; }
 .alert > p + p, .note > p + p, .trigger > p + p { margin-top: 5px; }
@@ -1435,11 +1435,11 @@ body { font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, san
 
 strong { font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif; font-weight: bold; font-style: normal; }
 
-h2, h3, h4 { font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif; font-weight: bold; font-style: normal; color: #ce4f07; text-align: center; }
+h2, h3, h4, .question.or-appearance-list-nolabel ~ .note, .question.or-appearance-label ~ .note { font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif; font-weight: bold; font-style: normal; color: #ce4f07; text-align: center; }
 
 h3 { padding: 5px 0 15px 0; word-wrap: break-word; }
 
-h4 { text-align: left; }
+h4, .question.or-appearance-list-nolabel ~ .note, .question.or-appearance-label ~ .note { text-align: left; }
 
 /** hide stuff **/
 .or [lang]:not(.active), .or-option-translations, .or-appearance-page-break, .or-constraint-msg, .or-required-msg, .option-wrapper .itemset-template, .itemset-labels { display: none; }
@@ -1456,7 +1456,7 @@ h4 { text-align: left; }
 .or-repeat .repeat-number + .or-group { border-top: none; }
 
 .or-group { border-top: 3px solid #bbbbbb; margin: 1.5em 0 0.4em 0; }
-.or-group .or-group { margin: 1.5em 0 0.5em 25px; }
+.or-group .or-group { margin: 1.5em 0 0.5em 0; }
 
 #stats + .or-group, #or-preload-items + .or-group, #form-languages + .or-group { border-top: none; }
 
@@ -1478,7 +1478,7 @@ legend > span { vertical-align: 12px; }
 .or-appearance-horizontal label { padding-right: 10px; float: left; }
 .or-appearance-horizontal [type="radio"], .or-appearance-horizontal [type="checkbox"] { width: auto; }
 
-.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label { background-color: transparent; border: 1px solid #ccc; border-radius: 4px; width: 100%; line-height: 40px; text-align: left; margin-bottom: .4em; }
+.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label { background-color: transparent; border: 1px solid #ccc; border-radius: 4px; width: auto; margin-right: 20px; margin-bottom: 6.4px; line-height: 40px; text-align: left; }
 .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label input[type="radio"], .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label input[type="checkbox"] { margin-top: 10px; margin-left: 15px; }
 .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label:focus, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label:hover, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label:active, .touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label[data-checked] { background-color: #fee5d6; }
 .touch input:not([type="radio"]):not([type="checkbox"]), .touch textarea, .touch select { border-radius: 2px; margin: 10px 0 10px 0; color: #104b66; }
@@ -1552,17 +1552,17 @@ input:not([type="radio"]):not([type="checkbox"]), textarea { height: 34px; }
 .geopoint .map-canvas { width: 100%; border: 1px solid #ccc; border-radius: 3px; margin-top: 10px; height: 275px; }
 .geopoint .map-canvas img { max-width: none; }
 
-.or-appearance-list-nolabel, .or-appearance-label { margin: -0.9em 0 -0.7em 0; }
-.or-appearance-list-nolabel legend, .or-appearance-label legend { float: left; border: none; line-height: 17px; max-width: 40%; min-height: 1px; }
-.or-appearance-list-nolabel .option-wrapper > label, .or-appearance-label .option-wrapper > label { float: left; display: block; text-align: center; }
-.or-appearance-list-nolabel .option-wrapper > label .active, .or-appearance-label .option-wrapper > label .active { margin: 0 auto; }
-.or-appearance-list-nolabel input, .or-appearance-label input { margin: 0 10px 0 10px; text-align: center; }
+.question.or-appearance-list-nolabel, .question.or-appearance-label { margin: -0.9em 0 -0.7em 0; }
+.question.or-appearance-list-nolabel legend, .question.or-appearance-label legend { float: left; border: none; line-height: 17px; width: 40%; min-height: 1px; }
+.question.or-appearance-list-nolabel .option-wrapper, .question.or-appearance-label .option-wrapper { display: -ms-flexbox; /*IE10*/ display: -webkit-flex; display: flex; -webkit-flex-direction: row; -ms-flex-direction: row; -moz-flex-direction: row; flex-direction: row; -webkit-flex-wrap: nowrap; -ms-flex-wrap: nowrap; -moz-flex-wrap: nowrap; flex-wrap: nowrap; }
+.question.or-appearance-list-nolabel .option-wrapper > label, .question.or-appearance-label .option-wrapper > label { -webkit-flex: 1; -ms-flex: 1; flex: 1; max-width: 100px; display: block; text-align: center; }
+.question.or-appearance-list-nolabel .option-wrapper > label .active, .question.or-appearance-label .option-wrapper > label .active { margin: 0 auto; }
+.question.or-appearance-list-nolabel .option-label.active, .question.or-appearance-label .option-label.active { text-align: center; }
+.question.or-appearance-list-nolabel input[type=radio], .question.or-appearance-list-nolabel input[type=checkbox], .question.or-appearance-label input[type=radio], .question.or-appearance-label input[type=checkbox] { position: relative; left: 50%; margin-left: -10px; }
+.question.or-appearance-list-nolabel ~ .note, .question.or-appearance-label ~ .note { background-color: transparent; }
 
-.question.or-appearance-list-nolabel { border-top: none; }
-.question.or-appearance-list-nolabel:not(:last-of-type) { border-bottom: none; }
 .question.or-appearance-list-nolabel label .active { display: none !important; float: none; }
 
-.question.or-appearance-label { border-bottom: none; }
 .question.or-appearance-label legend ~ .option-wrapper > label { margin-bottom: 6px; }
 .question.or-appearance-label legend ~ .option-wrapper > label:hover { background-color: transparent; }
 .question.or-appearance-label input { float: none; display: none !important; }
@@ -1791,9 +1791,9 @@ input:not([type="radio"]):not([type="checkbox"]), textarea { height: 34px; }
   .form-header { margin: 5px 0; }
   .form-header .form-language-selector { border-right: none; } }
 /* fancy radio buttons / checkboxes */
-legend ~ .option-wrapper > label .active { margin-left: 0; }
+legend ~ .option-wrapper > label .active { margin-left: 45px; display: block; }
 
-.option-wrapper input[type=radio], .option-wrapper input[type=checkbox] { background: url("../images/checkradio.png") no-repeat; cursor: pointer; -webkit-appearance: none; -moz-background-position-x: -9999px -9999px !important; -moz-background-position-y: -9999px -9999px !important; -ms-background-position-x: -9999px !important; -ms-background-position-y: -9999px !important; float: left; border: none; width: 20px; height: 20px; margin: 0 10px 1px 10px; }
+.option-wrapper input[type=radio], .option-wrapper input[type=checkbox] { background: url("../images/checkradio.png") no-repeat; cursor: pointer; -webkit-appearance: none; -moz-background-position-x: -9999px -9999px !important; -moz-background-position-y: -9999px -9999px !important; -ms-background-position-x: -9999px !important; -ms-background-position-y: -9999px !important; float: left; border: none; width: 20px; height: 20px; margin: 0 10px 1px 10px; outline: 0; }
 
 .option-wrapper input[type=checkbox] { background-position: 0 0; }
 .option-wrapper input[type=checkbox]:checked { background-position: -22px 0; }
@@ -1811,7 +1811,7 @@ legend ~ .option-wrapper > label .active { margin-left: 0; }
 .btn-reset .glyphicon-trash { vertical-align: bottom; }
 
 /* overriding main rules */
-body, h2, h3, h4, legend { color: #0d0d0d; }
+body, h2, h3, h4, .question.or-appearance-list-nolabel ~ .note, .question.or-appearance-label ~ .note, legend { color: #0d0d0d; }
 
 h3 { font-weight: bolder; font-size: 30px; }
 
