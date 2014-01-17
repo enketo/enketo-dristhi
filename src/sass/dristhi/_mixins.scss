@@ -2,16 +2,18 @@
 // It probably is not used in the Android App.
 
 @font-face {
-	font-family: 'Kannada Sangam MN';
-	src: url('/font/Kannada Sangam MN.ttc');
+    font-family: 'Kannada Sangam MN';
+    src: url("/font/Kannada Sangam MN.ttc");
 }
 
 @mixin font-normal {
-  font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  font-style: normal; }
+    font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
 
 @mixin font-bold {
-  font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif;;
-  font-weight: bold;
-  font-style: normal; }
+    font-family: "Helvetica Neue", "Kannada Sangam MN", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+}
