@@ -8,12 +8,13 @@ requirejs.config( {
         'jquery.xpath': '../../lib/enketo-core/lib/jquery-xpath/jquery.xpath',
         text: '../../lib/enketo-core/lib/text/text',
         xpath: '../../lib/enketo-core/lib/xpath/build/xpathjs_javarosa',
-        gmaps: 'http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&callback=gmapsLoaded', // add API key
+        gmaps: 'http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&callback=gmapsLoaded', // add API key?
         jquery: '../../lib/enketo-core/lib/jquery',
         bootstrap: '../../lib/enketo-core/lib/bootstrap',
         Modernizr: '../../lib/enketo-core/lib/Modernizr',
         gmapsDone: '../../lib/enketo-core/lib/gmapsDone', //needs to be removed after https://github.com/MartijnR/enketo-core/issues/22
-        enketo: '../../build/mock/enketo.mock' //replace with real one in production
+        enketo: '../../build/mock/enketo.mock', //replace with real one in production
+        androidContext: '../../build/mock/androidcontext.mock' //replace with real one in production
     },
     shim: {
         'xpath': {
@@ -33,14 +34,22 @@ requirejs.config( {
         },
         "Modernizr": {
             exports: "Modernizr"
+        },
+        // Kiran, this is just a hack to make sure that androidContext is available to the main controller
+        // the issue we experienced with the Internet App is that it sometimes loads the androidcontext.mock.js AFTER
+        // this controller below, which means that the global modelXMLStr wasn't available
+        // The shim below, allows us to ensure it is available in the main controller (and that modelXMLStr is no longer
+        // a global object)
+        'androidContext': {
+            exports: 'androidContext'
         }
     }
 } );
 
-requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'gui', 'util', 'jquery', 'plugins' ],
-    function( Form, FormDataController, FormModelJSON, gui, util, $ ) {
+requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'gui', 'util', 'androidContext', 'jquery', 'plugins' ],
+    function( Form, FormDataController, FormModelJSON, gui, util, androidContext, $ ) {
         'use strict';
-        var existingInstanceJSON, instanceToEditXMLStr, loadErrors, modelJSON, form, instanceId,
+        var modelXMLStr, existingInstanceJSON, instanceToEditXMLStr, loadErrors, modelJSON, form, instanceId,
             queryParams = util.getAllQueryParams(),
             formDataController = new FormDataController( queryParams );
 
@@ -57,6 +66,7 @@ requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON'
             return gui.alert( 'JSON Instance with id "' + instanceId + '" could not be found.' );
         }
 
+        modelXMLStr = androidContext.getModel();
         modelJSON = new FormModelJSON( existingInstanceJSON );
         instanceToEditXMLStr = modelJSON.toXML();
         form = new Form( 'form.or:eq(0)', modelXMLStr, instanceToEditXMLStr );

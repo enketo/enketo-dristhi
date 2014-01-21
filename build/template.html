@@ -16,14 +16,11 @@
 		<script type="text/javascript" src="mock/androidcontext.mock.js"></script>
 <!--	*** end of mocks *** -->
 
-		<!--<script type="text/javascript" src="../ziggy/ziggy.min.js"></script>-->
 		<script type="text/javascript">
 			window.onerror = function (m, u, l) {
         	    console.error("Javascript Error: , msg: {0}, url: {1}, line: {2}".format(m, u, l));
 				return true;
 			};
-
-			var modelXMLStr = androidContext.getModel();
 		</script>
 
 <!--    separate and unminified: -->
@@ -31,6 +28,7 @@
 
 <!-- 	combined & minified: -->
 		<script type="text/javascript" src="js/enketo-dristhi-combined.min.js"></script>
+		<!--<script type="text/javascript" src="../ziggy/ziggy.min.js"></script>-->
 
 	</head>
 	<body>

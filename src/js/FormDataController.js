@@ -1,6 +1,6 @@
 /*global mockForms2, mockInstances*/
 
-define( [ 'enketo' ], function( enketo ) {
+define( [ 'enketo', 'androidContext' ], function( enketo, androidContext ) {
 
     /**
      * [FormDataController description]
