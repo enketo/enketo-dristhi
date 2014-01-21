@@ -1,4 +1,4 @@
-define( [], function() {
+define( [ 'mockInstances' ], function( mockInstances ) {
     return {
         FormDataRepository: function() {},
         FormDataController: function( entityRelO, formDefO, formModelMapperO ) {

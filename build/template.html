@@ -10,24 +10,11 @@
 
 		<link href="css/dristhi.css" media="all" rel="stylesheet" type="text/css">
 
-<!--	*** mocks to run statically in browser *** -->
-		<script type="text/javascript" src="mock/transforms.mock.js"></script>
-		<script type="text/javascript" src="mock/instances.mock.js"></script>
-		<script type="text/javascript" src="mock/androidcontext.mock.js"></script>
-<!--	*** end of mocks *** -->
-
-		<script type="text/javascript">
-			window.onerror = function (m, u, l) {
-        	    console.error("Javascript Error: , msg: {0}, url: {1}, line: {2}".format(m, u, l));
-				return true;
-			};
-		</script>
-
 <!--    separate and unminified: -->
-		<!--<script type="text/javascript" data-main="../../main.js" src="../../lib/enketo-core/lib/require.js"></script>-->
+		<script type="text/javascript" data-main="../../main.js" src="../../lib/enketo-core/lib/require.js"></script>
 
 <!-- 	combined & minified: -->
-		<script type="text/javascript" src="js/enketo-dristhi-combined.min.js"></script>
+		<!--<script type="text/javascript" src="js/enketo-dristhi-combined.min.js"></script>-->
 		<!--<script type="text/javascript" src="../ziggy/ziggy.min.js"></script>-->
 
 	</head>
@@ -55,9 +42,8 @@
 			<article class="paper">
 				<div class="form-header clearfix"><span class="form-language-selector"><span>Choose Language</span></span></div>
 				
-				<script>
-					document.write(androidContext.getForm());
-				</script>
+				<form class="or">
+				</form>
 				
 				<button id="submit-form" class="btn btn-info btn-large">Save</button>	
 				<div class="enketo-power">Powered by <img src="images/enketo_bare_100x37.png" alt="enketo logo" /></div>
