@@ -2,7 +2,7 @@
     "name": "enketo-dristhi",
     "description": "Customized enketo-core for hybrid Android app 'Dristhi'",
     "homepage": "https://play.google.com/store/apps/details?id=org.ei.drishti",
-    "version": "2.2.1",
+    "version": "2.2.2",
     "repository": {
         "type": "git",
         "url": "https://github.com/MartijnR/enketo-dristhi"
