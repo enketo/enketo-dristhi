@@ -4,5 +4,8 @@ $line-height-base: 1;
 $accent-color-1: #CE4F07;
 $repeat-bg: lighten($accent-color-1, 55%);
 
+$input-height: 36px;
+$input-min-width: 0.3 * 720px;
+
 $images-path: '../images/';
 $icon-font-path: '../font/';
