@@ -23,6 +23,10 @@ h3 {
     @include button-variant($btn-info-color, rgb(65, 151, 32), rgb(36, 122, 10));
 }
 
+.main {
+    padding-top: 20px;
+}
+
 .paper {
     border: none;
 }
