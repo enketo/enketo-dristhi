@@ -6,7 +6,7 @@ define( [ 'mockInstances' ], function( mockInstances ) {
                 return mockInstances[ params.instanceId ] || null;
             };
             this.save = function( instanceId, data ) {
-                console.log( 'saving...' );
+                console.log( 'saving...', data );
             };
         },
         EntityRelationshipLoader: function() {},

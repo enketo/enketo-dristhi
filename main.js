@@ -97,7 +97,7 @@ requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON'
                         $button.btnBusyState( false );
                         return;
                     } else {
-                        jData = modelJSON.get();
+                        jData = modelJSON.get( form );
                         delete jData.errors;
                         saveResult = formDataController.save( form.getInstanceID(), jData );
                         $button.btnBusyState( false );
