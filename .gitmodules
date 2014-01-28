@@ -6,4 +6,4 @@
 	url = https://github.com/MartijnR/enketo-json.git
 [submodule "lib/ziggy"]
 	path = lib/ziggy
-	url = git@github.com:SEL-Columbia/ziggy.git
+url=https://github.com/SEL-Columbia/ziggy.git
