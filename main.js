@@ -12,10 +12,10 @@ requirejs.config( {
         jquery: '../../lib/enketo-core/lib/jquery',
         bootstrap: '../../lib/enketo-core/lib/bootstrap',
         Modernizr: '../../lib/enketo-core/lib/Modernizr',
-        enketo: '../../build/mock/enketo.mock', //replace with real one in dristhi app
         androidContext: '../../build/mock/androidcontext.mock', //replace with real one in dristhi app
         mockForms: '../../build/mock/transforms.mock', //not required in dristhi app
-        mockInstances: '../../build/mock/instances.mock' //not required in dristhi app
+        mockInstances: '../../build/mock/instances.mock', //not required in dristhi app
+        ziggy: '../../lib/ziggy/ziggy/src'
     },
     shim: {
         'xpath': {

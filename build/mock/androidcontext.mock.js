@@ -5,14 +5,24 @@ define( [ 'mockForms' ], function( mockForms ) {
         formName: getURLParameter( 'formName' ),
 
         getForm: function() {
+            if(window.androidContext){
+                return window.androidContext.getForm();
+            }
             return mockForms[ this.formName ].html_form;
         },
 
         getModel: function() {
+            if(window.androidContext){
+                return window.androidContext.getModel();
+            }
             return mockForms[ this.formName ].xml_model;
         },
 
-        goBack: function() {}
+        goBack: function() {
+            if(window.androidContext){
+                window.androidContext.goBack();
+            }
+        }
     };
 } );
 
@@ -27,7 +37,7 @@ var logContext = {
 
 String.prototype.format = function( a, b, c ) {
     return a + b + c;
-}
+};
 
 function getURLParameter( name ) {
     return decodeURI(
