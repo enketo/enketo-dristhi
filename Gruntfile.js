@@ -131,7 +131,7 @@ module.exports = function( grunt ) {
     grunt.registerTask( 'style', [ 'prepWidgetSass', 'sass' ] );
     grunt.registerTask( 'compile', [ 'requirejs:compile' ] );
     grunt.registerTask( 'server', [ 'connect:server:keepalive' ] );
-    grunt.registerTask( 'server-dev', [ 'connect:dev:keepalive' ] ); // used for uncompiled js
+    grunt.registerTask( 'dev-server', [ 'connect:dev:keepalive' ] ); // used for uncompiled js
     grunt.registerTask( 'test', [ 'jsbeautifier:test', 'jshint', 'compile' ] );
     grunt.registerTask( 'default', [ 'jsbeautifier:test', 'jshint', 'style', 'compile' ] );
 };
