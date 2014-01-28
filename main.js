@@ -47,6 +47,11 @@ requirejs.config( {
     }
 } );
 
+// in Dristhi app, do not load mockForms
+if ( window.androidContext ) {
+    define( 'mockForms', null );
+}
+
 requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'gui', 'util', 'androidContext', 'jquery', 'plugins' ],
     function( Form, FormDataController, FormModelJSON, gui, util, androidContext, $ ) {
         'use strict';
