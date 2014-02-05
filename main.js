@@ -6,6 +6,7 @@ requirejs.config( {
         'enketo-config': '../../config.json',
         'enketo-json': '../../lib/enketo-json/src',
         'jquery.xpath': '../../lib/enketo-core/lib/jquery-xpath/jquery.xpath',
+        'jquery.touchswipe': '../../lib/enketo-core/lib/jquery-touchswipe/jquery.touchSwipe',
         text: '../../lib/enketo-core/lib/text/text',
         xpath: '../../lib/enketo-core/lib/xpath/build/xpathjs_javarosa',
         gmaps: 'http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&callback=gmapsLoaded', // add API key?
