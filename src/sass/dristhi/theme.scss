@@ -21,6 +21,9 @@ h3 {
     left: auto;
     height: 45px;
     @include button-variant($btn-info-color, rgb(65, 151, 32), rgb(36, 122, 10));
+    progress {
+        margin: 0 auto 0 auto;
+    }
 }
 
 .main {
@@ -39,19 +42,4 @@ h3 {
     .form-header {
         display: none;
     }
-}
-
-.touch {
-    .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel) {
-        // touch radio buttons and checkboxes
-        legend ~ label {
-            &:focus, &:hover, &:active, &[data-checked] {
-                background-color: #e4f4ff;
-            }
-        }
-    }
-}
-
-#submit-form progress {
-    margin: 0 auto 0 auto;
 }
