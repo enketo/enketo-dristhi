@@ -51,12 +51,6 @@ requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON'
             return true;
         };
 
-        //$( 'form.or' ).replaceWith( androidContext.getForm() );
-
-        //switches to touch=true, useful for desktop development, won't affect performance of production app.
-        //if ( typeof setToMobileMode === 'function' ) {
-        //    setToMobileMode();
-        //}
         $( document ).ready( function() {
             existingInstanceJSON = formDataController.get();
 

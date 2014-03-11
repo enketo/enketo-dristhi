@@ -1,6 +1,6 @@
 /*global mockForms2, mockInstances*/
 
-// in Dristhi app, do not load mockForms
+// in Dristhi app, do not load ziggy/FormDataController
 if ( window.ENVIRONMENT === 'web' ) {
     define( 'ziggy/FormDataController', null );
 }

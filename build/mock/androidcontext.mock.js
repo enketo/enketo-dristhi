@@ -1,14 +1,10 @@
 if ( !window.androidContext ) {
     var getURLParameter, loadScript;
 
-    console.log( 'loading the things' );
+    console.log( 'loading the web things' );
 
     loadScript = function( filename ) {
-        //var fileref = document.createElement( 'script' );
-        //fileref.setAttribute( "type", "text/javascript" );
-        //fileref.setAttribute( "src", filename );
-        //document.getElementsByTagName( "head" )[ 0 ].appendChild( fileref )
-        // get some kind of XMLHttpRequest
+        // synchronously load the mock scripts
         var xhrObj = new XMLHttpRequest();
         // open and send a synchronous request
         xhrObj.open( 'GET', filename, false );
