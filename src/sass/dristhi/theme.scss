@@ -43,3 +43,8 @@ h3 {
         display: none;
     }
 }
+
+.touch .question:not(.or-appearance-compact):not(.or-appearance-quickcompact):not(.or-appearance-label):not(.or-appearance-list-nolabel):not(.or-appearance-likert) .option-wrapper > label {
+    margin-right: 0;
+    padding: 14px 14px 14px 40px;
+}
