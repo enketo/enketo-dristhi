@@ -68,7 +68,6 @@ module.exports = function( grunt ) {
                     baseUrl: 'src/js',
                     mainConfigFile: "main.js",
                     findNestedDependencies: true,
-                    exclude: [ 'mockForms' ],
                     include: ( function() {
                         //add widgets js and widget config.json files
                         var widgets = grunt.file.readJSON( 'config.json' ).widgets;

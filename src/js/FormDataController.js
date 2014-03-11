@@ -1,44 +1,48 @@
 /*global mockForms2, mockInstances*/
 
-define( [ 'ziggy/FormDataController', 'mockInstances' ],
-    function( formDataController, mockInstances ) {
+// in Dristhi app, do not load mockForms
+if ( window.ENVIRONMENT === 'web' ) {
+    define( 'ziggy/FormDataController', null );
+}
+
+define( [ 'ziggy/FormDataController' ], function( ziggyController ) {
+
+    /**
+     * [FormDataController description]
+     * @param {{instanceId: string, entityId: string}} params [description]
+     * @constructor
+     */
+    function FormDataController( params ) {
+        params = params || {};
 
         /**
-         * [FormDataController description]
-         * @param {{instanceId: string, entityId: string}} params [description]
-         * @constructor
+         * Gets instance as JSON from Dristhi DB - Should this be asynchronous?
+         * @return {?*} Form Data JSON object
          */
-        function FormDataController( params ) {
-            params = params || {};
-            var androidContext = window.androidContext;
-            /**
-             * Gets instance as JSON from Dristhi DB - Should this be asynchronous?
-             * @return {?*} Form Data JSON object
-             */
-            this.get = function() {
-                if ( !androidContext ) {
-                    return mockInstances[ params.instanceId ] || null;
-                }
-                return formDataController.get( params ) || null;
-            };
+        this.get = function() {
+            if ( window.ENVIRONMENT === 'web' ) {
+                return mockInstances[ params.instanceId ] || null;
+            }
+            return ziggyController.get( params ) || null;
+        };
 
-            /**
-             * Passes instance as JSON to store in Dristhi DB - Should this be asynchronous?
-             * @param  {string} instanceId	the new instanceID of the record
-             * @param  {*}		data		Form Data JSON object
-             * @return {boolean}
-             */
-            this.save = function( instanceId, data ) {
-                if ( !androidContext ) {
-                    console.log( 'saving...', data );
-                } else {
-                    formDataController.save( params, data );
-                    androidContext.goBack();
-                }
-            };
+        /**
+         * Passes instance as JSON to store in Dristhi DB - Should this be asynchronous?
+         * @param  {string} instanceId	the new instanceID of the record
+         * @param  {*}		data		Form Data JSON object
+         * @return {boolean}
+         */
+        this.save = function( instanceId, data ) {
+            if ( window.ENVIRONMENT === 'web' ) {
+                console.log( 'saving...', data );
+            } else {
+                ziggyController.save( params, data );
+                androidContext.goBack();
+            }
+        };
 
-            this.remove = function( instanceId ) {};
-        }
+        this.remove = function( instanceId ) {};
+    }
 
-        return FormDataController;
-    } );
+    return FormDataController;
+} );
