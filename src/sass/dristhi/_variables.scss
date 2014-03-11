@@ -4,6 +4,8 @@ $line-height-base: 1;
 $accent-color-1: #CE4F07;
 $accent-color-2: #e4f4ff;
 $repeat-bg: lighten($accent-color-1, 55%);
+$radiocheck-unchecked-color: #cccccc;
+$radiocheck-checked-color:  darken($accent-color-2, 50%);
 
 $input-height: 36px;
 $input-min-width: 80%; 
