@@ -3,7 +3,7 @@
 ._*
 node_modules/*
 .sass-cache/*
-build/css
-build/js
+build/css/*
+build/js/*
 .idea/*
 *.iml
