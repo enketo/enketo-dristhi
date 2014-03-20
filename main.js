@@ -13,6 +13,9 @@ requirejs.config( {
         jquery: '../../lib/enketo-core/lib/jquery',
         bootstrap: '../../lib/enketo-core/lib/bootstrap',
         Modernizr: '../../lib/enketo-core/lib/Modernizr',
+        androidContext: '../../build/mock/androidcontext.mock', //replace with real one in dristhi app
+        mockForms: '../../build/mock/transforms.mock', //not required in dristhi app
+        mockInstances: '../../build/mock/instances.mock', //not required in dristhi app
         ziggy: '../../lib/ziggy/ziggy/src'
     },
     shim: {
@@ -33,14 +36,25 @@ requirejs.config( {
         },
         'Modernizr': {
             exports: 'Modernizr'
+        },
+        // not required in dristhi app:
+        'mockForms': {
+            exports: 'mockForms'
+        },
+        // not required in dristhi app:
+        'mockInstances': {
+            exports: 'mockInstances'
         }
     }
 } );
 
+// in Dristhi app, do not load mockForms
+if ( window.androidContext ) {
+    define( 'mockForms', null );
+}
 
-
-requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'gui', 'util', 'jquery', 'plugins' ],
-    function( Form, FormDataController, FormModelJSON, gui, util, $ ) {
+requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'gui', 'util', 'androidContext', 'jquery', 'plugins' ],
+    function( Form, FormDataController, FormModelJSON, gui, util, androidContext, $ ) {
         'use strict';
         var modelXMLStr, existingInstanceJSON, instanceToEditXMLStr, loadErrors, modelJSON, form, instanceId,
             queryParams = util.getAllQueryParams(),
@@ -51,46 +65,51 @@ requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON'
             return true;
         };
 
-        $( document ).ready( function() {
-            existingInstanceJSON = formDataController.get();
+        $( 'form.or' ).replaceWith( androidContext.getForm() );
 
-            if ( !existingInstanceJSON ) {
-                $( 'form.or' ).remove();
-                instanceId = queryParams.instanceId || undefined;
-                return gui.alert( 'JSON Instance with id "' + instanceId + '" could not be found.' );
-            }
+        //switches to touch=true, useful for desktop development, won't affect performance of production app.
+        //if ( typeof setToMobileMode === 'function' ) {
+        //    setToMobileMode();
+        //}
 
-            modelXMLStr = androidContext.getModel();
-            modelJSON = new FormModelJSON( existingInstanceJSON );
-            instanceToEditXMLStr = modelJSON.toXML();
-            form = new Form( 'form.or:eq(0)', modelXMLStr, instanceToEditXMLStr );
+        existingInstanceJSON = formDataController.get();
 
-            loadErrors = form.init();
-            console.log( 'load errors', loadErrors );
+        if ( !existingInstanceJSON ) {
+            $( 'form.or' ).remove();
+            instanceId = queryParams.instanceId || undefined;
+            return gui.alert( 'JSON Instance with id "' + instanceId + '" could not be found.' );
+        }
 
-            //controller for submission of data to drishti
-            $( document ).on( 'click', 'button#submit-form:not(:disabled)', function( event ) {
-                var jData, saveResult,
-                    $button = $( this );
-                $( this ).btnBusyState( true );
-                // without this weird timeout trick the button won't change until form.validateForm() is complete
-                // something odd that seems to happen when adding things to DOM.
-                setTimeout( function() {
-                    if ( typeof form !== 'undefined' ) {
+        modelXMLStr = androidContext.getModel();
+        modelJSON = new FormModelJSON( existingInstanceJSON );
+        instanceToEditXMLStr = modelJSON.toXML();
+        form = new Form( 'form.or:eq(0)', modelXMLStr, instanceToEditXMLStr );
 
-                        if ( !form.validate() ) {
-                            gui.alert( 'Form contains errors <br/>(please see fields marked in red)' );
-                            $button.btnBusyState( false );
-                            return;
-                        } else {
-                            jData = modelJSON.get( form );
-                            delete jData.errors;
-                            saveResult = formDataController.save( form.getInstanceID(), jData );
-                            $button.btnBusyState( false );
-                        }
+        loadErrors = form.init();
+        console.log( 'load errors', loadErrors );
+
+        //controller for submission of data to drishti
+        $( document ).on( 'click', 'button#submit-form:not(:disabled)', function( event ) {
+            var jData, saveResult,
+                $button = $( this );
+            $( this ).btnBusyState( true );
+            // without this weird timeout trick the button won't change until form.validateForm() is complete
+            // something odd that seems to happen when adding things to DOM.
+            setTimeout( function() {
+                if ( typeof form !== 'undefined' ) {
+
+                    if ( !form.validate() ) {
+                        gui.alert( 'Form contains errors <br/>(please see fields marked in red)' );
+                        $button.btnBusyState( false );
+                        return;
+                    } else {
+                        jData = modelJSON.get( form );
+                        delete jData.errors;
+                        saveResult = formDataController.save( form.getInstanceID(), jData );
+                        $button.btnBusyState( false );
                     }
-                }, 100 );
-            } );
+                }
+            }, 100 );
         } );
 
     } );

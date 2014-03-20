@@ -1,54 +1,57 @@
-if ( !window.androidContext ) {
-    var getURLParameter, loadScript;
-
-    console.log( 'loading the web things' );
-
-    loadScript = function( filename ) {
-        // synchronously load the mock scripts
-        var xhrObj = new XMLHttpRequest();
-        // open and send a synchronous request
-        xhrObj.open( 'GET', filename, false );
-        xhrObj.send( '' );
-        // add the returned content to a newly created script tag
-        var se = document.createElement( 'script' );
-        se.type = "text/javascript";
-        se.text = xhrObj.responseText;
-        document.getElementsByTagName( 'head' )[ 0 ].appendChild( se );
-    };
-
-    getURLParameter = function( name ) {
-        return decodeURI(
-            ( RegExp( name + '=' + '(.+?)(&|$)' ).exec( location.search ) || [ , null ] )[ 1 ]
-        );
-    };
-
-    loadScript( '../build/mock/transforms.mock.js' );
-    loadScript( '../build/mock/instances.mock.js' );
-
-    window.ENVIRONMENT = 'web';
-
-    window.androidContext = {
+define( [ 'mockForms' ], function( mockForms ) {
+    return {
         //formName: 'ANC_Registration_24_5_12',
         //formName: 'EC_Registration_24_5_12',
         formName: getURLParameter( 'formName' ),
 
         getForm: function() {
+            if(window.androidContext){
+                return window.androidContext.getForm();
+            }
             return mockForms[ this.formName ].html_form;
         },
 
         getModel: function() {
+            if(window.androidContext){
+                return window.androidContext.getModel();
+            }
             return mockForms[ this.formName ].xml_model;
         },
 
         goBack: function() {
-            console.log( 'Wut?' );
+            if(window.androidContext){
+                window.androidContext.goBack();
+            }
         }
     };
+} );
 
-    String.prototype.format = function( a, b, c ) {
-        return a + b + c;
-    };
+// what is this?
+/*
+var logContext = {
+    logError: function( e ) {
+        console.log( e );
+    }
+};
+*/
 
-} else {
-    window.ENVIROMENT = 'dristhi';
+String.prototype.format = function( a, b, c ) {
+    return a + b + c;
+};
+
+function getURLParameter( name ) {
+    return decodeURI(
+        ( RegExp( name + '=' + '(.+?)(&|$)' ).exec( location.search ) || [ , null ] )[ 1 ]
+    );
 }
+
+//this happens automatically in main app for mobiles
+/*
+function setToMobileMode() {
+    require( [ 'Modernizr' ], function( Modernizr ) {
+        Modernizr.touch = true;
+        var html = document.getElementsByTagName( 'html' )[ 0 ];
+        html.className = html.className.replace( /no-touch/, 'touch' );
+    } );
+};
+*/
