@@ -2,7 +2,6 @@
     "widgets": [
         "enketo-widget/note/notewidget",
         "enketo-widget/select-mobile/selectpicker",
-        "enketo-widget/geopoint/geopointpicker",
         "enketo-widget/table/tablewidget",
         "enketo-widget/radio/radiopicker",
         "enketo-widget/time/timepicker-extended",
