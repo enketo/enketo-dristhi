@@ -89,6 +89,7 @@ requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON'
 
         loadErrors = form.init();
         console.log( 'load errors', loadErrors );
+        androidContext.onLoadFinished();
 
         //controller for submission of data to drishti
         $( document ).on( 'click', 'button#submit-form:not(:disabled)', function( event ) {
