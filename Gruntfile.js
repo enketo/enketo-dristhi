@@ -91,9 +91,6 @@ module.exports = function( grunt ) {
     grunt.loadNpmTasks( 'grunt-contrib-sass' );
     grunt.loadNpmTasks( 'grunt-contrib-requirejs' );
 
-    grunt.registerTask( 'test', [ 'jasmine' ] );
-    grunt.registerTask( 'default', [ 'uglify', 'sass', 'test' ] );
-
     grunt.registerTask( 'prepWidgetSass', 'Preparing _widgets.scss dynamically', function() {
         var widgetConfig, widgetFolderPath, widgetSassPath, widgetConfigPath,
             config = grunt.config( 'prepWidgetSass' ),
@@ -122,11 +119,11 @@ module.exports = function( grunt ) {
         grunt.file.write( config.writePath, content );
 
     } );
-
+    grunt.registerTask( 'test', [ 'jasmine' ] );
+    grunt.registerTask( 'default', [ 'uglify', 'sass', 'test' ] );
     grunt.registerTask( 'style', [ 'prepWidgetSass', 'sass' ] );
     grunt.registerTask( 'compile', [ 'requirejs:compile' ] );
     grunt.registerTask( 'server', [ 'connect:server:keepalive' ] );
-    grunt.registerTask( 'dev-server', [ 'connect:dev:keepalive' ] ); // used for uncompiled js
     grunt.registerTask( 'test', [ 'jsbeautifier:test', 'jshint', 'compile' ] );
     grunt.registerTask( 'default', [ 'jsbeautifier:test', 'jshint', 'style', 'compile' ] );
 };

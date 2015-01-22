@@ -58,31 +58,38 @@ if ( window.androidContext ) {
 requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON', 'gui', 'util', 'androidContext', 'jquery', 'plugins' ],
     function( Form, FormDataController, FormModelJSON, gui, util, androidContext, $ ) {
         'use strict';
-        var modelXMLStr, existingInstanceJSON, instanceToEditXMLStr, loadErrors, modelJSON, form, instanceId,
+        var modelXMLStr, existingInstanceJSON, instanceToEditXMLStr, loadErrors, modelJSON, form, formHTML, instanceId,
             queryParams = util.getAllQueryParams(),
-            formDataController = new FormDataController( queryParams );
+            formDataController = new FormDataController( queryParams ),
+            $submitButton = $( '#submit-form' );
 
         window.onerror = function( m, u, l ) {
             console.error( "Javascript Error: , msg: {0}, url: {1}, line: {2}".format( m, u, l ) );
             return true;
         };
 
-        $( 'form.or' ).replaceWith( androidContext.getForm() );
+        // getting the HTML form
+        formHTML = androidContext.getForm();
+        if ( !formHTML ) {
+            return gui.alert( 'The form could not be retrieved.', 'Form Load Error' );
+        }
+        $( 'form.or' ).replaceWith( formHTML );
 
-        //switches to touch=true, useful for desktop development, won't affect performance of production app.
-        //if ( typeof setToMobileMode === 'function' ) {
-        //    setToMobileMode();
-        //}
-
+        // getting the existing JSON instance 
         existingInstanceJSON = formDataController.get();
-
         if ( !existingInstanceJSON ) {
             $( 'form.or' ).remove();
-            instanceId = queryParams.instanceId || undefined;
+            instanceId = queryParams.instanceId;
             return gui.alert( 'JSON Instance with id "' + instanceId + '" could not be found.' );
         }
 
+        // getting the default XML model
         modelXMLStr = androidContext.getModel();
+        if ( !modelXMLStr ) {
+            $( 'form.or' ).remove();
+            return gui.alert( 'The model could not be retrieved.', 'Form Load Error' );
+        }
+
         modelJSON = new FormModelJSON( existingInstanceJSON );
         instanceToEditXMLStr = modelJSON.toXML();
         form = new Form( 'form.or:eq(0)', modelXMLStr, instanceToEditXMLStr );
@@ -90,12 +97,14 @@ requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON'
         loadErrors = form.init();
         console.log( 'load errors', loadErrors );
         androidContext.onLoadFinished();
+        $submitButton.prop( 'disabled', false );
 
         //controller for submission of data to drishti
-        $( document ).on( 'click', 'button#submit-form:not(:disabled)', function( event ) {
-            var jData, saveResult,
-                $button = $( this );
-            $( this ).btnBusyState( true );
+        $submitButton.click( function( event ) {
+            var jData, saveResult;
+
+            $submitButton.btnBusyState( true );
+
             // without this weird timeout trick the button won't change until form.validateForm() is complete
             // something odd that seems to happen when adding things to DOM.
             setTimeout( function() {
@@ -103,13 +112,13 @@ requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON'
 
                     if ( !form.validate() ) {
                         gui.alert( 'Form contains errors <br/>(please see fields marked in red)' );
-                        $button.btnBusyState( false );
+                        $submitButton.btnBusyState( false );
                         return;
                     } else {
                         jData = modelJSON.get( form );
                         delete jData.errors;
                         saveResult = formDataController.save( form.getInstanceID(), jData );
-                        $button.btnBusyState( false );
+                        $submitButton.btnBusyState( false );
                     }
                 }
             }, 100 );
