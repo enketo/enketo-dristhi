@@ -95,7 +95,7 @@ requirejs( [ 'enketo-js/Form', 'FormDataController', 'enketo-json/FormModelJSON'
         form = new Form( 'form.or:eq(0)', modelXMLStr, instanceToEditXMLStr );
 
         loadErrors = form.init();
-        console.log( 'load errors', loadErrors );
+        console.log( 'load errors: ' + loadErrors );
         androidContext.onLoadFinished();
         $submitButton.prop( 'disabled', false );
 
